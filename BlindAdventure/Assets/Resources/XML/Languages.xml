@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language>
+		<StartMenuExplanation>Press on the screen to go to the main menu! Swipe up to switch language. For more information about the app swipe down! To close the app swipe right.</StartMenuExplanation>
+		<StartMenuGameExplanation>In this app you can create your own game. If you do not know how to continue you can swipe down the screen at each menu and you will be told what you can do right now. 
+		When you are creating the app you can also swipe up to get to a previous menu. Basically, your created game consists of up to five levels. Each level has different nodes which you can create.
+		A node can be an item to find or its a node with a minigame which you can choose. Once you have decided the minigame node you can choose between a fight, an steeplechase or a quiz. You can also give the minigame a name by audio input. 
+		For example, you name your node with a minigame, knight or magician, who makes this minigame available. As a reward if you win a minigame you will also get an item which you can choose. 
+		It is also important that you will need a headphone for playing the fight to hear from which side the opponent approaches. You can also share your created game with the community or download a game from another user. To close the app swipe right. 
+		</StartMenuGameExplanation>
+		<MainMenuAwake>Main menu! Press the upper half of the screen to create a Level, lower half to play! To share a created game or download a game from another user, swipe left. To close the app swipe right.</MainMenuAwake>
+		<MainMenuCreateButton>Levelselection to create a level, swipe for more! Level 1</MainMenuCreateButton>
+		<MainMenuPlayButton>Levelselection to play a level, swipe for more! Level 1</MainMenuPlayButton>
+		<MainMenuWait>Please wait!</MainMenuWait>
+		<MainMenuWait2>Please wait! In the game, you can retrieve your collected items by pressing the bottom half of the screen.</MainMenuWait2>
+		<MainMenuCreateLevelButton>Please create the previous level first!</MainMenuCreateLevelButton>
+		<MainMenuPlayLevelButton>Please finish the previous level first!</MainMenuPlayLevelButton>
+		<MainMenuPlayLevelButton2>Please create this level first!</MainMenuPlayLevelButton2>
+		<MainMenuPlayLevelButton3>Please create the previous level first!</MainMenuPlayLevelButton3>
+		<MainMenuExplanation>You are now in the main menu. To create a level press the upper half of the screen. To play a level press the lower half of the screen. To change the language, swipe up. To share a created game or download a game from another user, swipe left. To close the app swipe right.</MainMenuExplanation>
+		<CreateLevelExplanation>Here you can choose a level that you want to create. You can swipe left or right to choose one of them. You can only create level 2 after you have finished level 1! After you have chosen a level press on the screen! If you swipe up you switch back to the main menu.</CreateLevelExplanation>
+		<StartGameMenuExplanation>Here you can choose a level that you want to play. You can swipe left or right to choose one of them. You can only play level 2 after you have finished level 1! After you have chosen a level press on the screen! If you swipe up you switch back to the main menu.</StartGameMenuExplanation>
+		<PlayLevelMenuPlayLevel>Welcome to Level!</PlayLevelMenuPlayLevel>
+		<PlayLevelMenuPlayNodeLevelEnd>Here is the level over. The following items you are still missing to complete the level.</PlayLevelMenuPlayNodeLevelEnd>
+		<PlayLevelMenuPlayNodeItemCollect>Here is an!</PlayLevelMenuPlayNodeItemCollect>
+		<PlayLevelMenuPlayNodeItemCollect2>Here is a!</PlayLevelMenuPlayNodeItemCollect2>
+		<PlayLevelMenuPlayNodeItemCollect3>. I will take that with me, maybe I need it later.</PlayLevelMenuPlayNodeItemCollect3>
+		<PlayLevelMenuPlayNodeAgain>I have been here once before and found an item.</PlayLevelMenuPlayNodeAgain>
+		<PlayLevelMenuPlayNodeWalk>Swipe right to go further or left to go back.</PlayLevelMenuPlayNodeWalk>
+		<PlayLevelMenuLoadNodeName>The person has a minigame for you. If you want to play this minigame then press the upper half otherwise you can swipe in one direction to move on.</PlayLevelMenuLoadNodeName>
+		<PlayLevelMenuLoadNodeName2>I have already got something here. Do you want to play the minigame again? Then press on the upper half otherwise you can swipe in one direction to move on.</PlayLevelMenuLoadNodeName2>
+		<PlayLevelMenuFinishedLevel>Congratulation, you finished the game! To go back to the main menu swipe up.</PlayLevelMenuFinishedLevel>
+		<PlayLevelMenuFinishedLevel2>Great, you completed the level! To go back to the main menu swipe up.</PlayLevelMenuFinishedLevel2>
+		<PlayLevelMenuPlayNodeButton>Here is a quiz to solve.</PlayLevelMenuPlayNodeButton>
+		<PlayLevelMenuInventoryButton>You have the following items!</PlayLevelMenuInventoryButton>
+		<PlayLevelMenuInventoryButton2>You don't have any items.</PlayLevelMenuInventoryButton2>
+		<PlayLevelMenuExitNodeButton>Swipe in one direction to move on.</PlayLevelMenuExitNodeButton>
+		<PlayLevelMenuWaitToFight>Here is a fight to win. Swipe in the direction from which the opponent comes.</PlayLevelMenuWaitToFight>
+		<PlayLevelMenuFightOpponent>Defeated</PlayLevelMenuFightOpponent>
+		<PlayLevelMenuFightOpponent2>Great, fight won.</PlayLevelMenuFightOpponent2>
+		<PlayLevelMenuFightOpponent3>As a reward, I got an!</PlayLevelMenuFightOpponent3>
+		<PlayLevelMenuFightOpponent4>As a reward, I got a!</PlayLevelMenuFightOpponent4>
+		<PlayLevelMenuFightOpponent6>I have already received an item here unfortunately there is nothing left.</PlayLevelMenuFightOpponent6>
+		<PlayLevelMenuFightOpponent7>To play the minigame again press the upper half otherwise the lower half.</PlayLevelMenuFightOpponent7>
+		<PlayLevelMenuFightOpponent8>Unfortunately lost. </PlayLevelMenuFightOpponent8>
+		<PlayLevelMenuWaitToSteeplechase>Here is a steeplechase to complete. Swipe in one direction to avoid running into the obstacle.</PlayLevelMenuWaitToSteeplechase>
+		<PlayLevelMenuWaitToObstacle>Attention left</PlayLevelMenuWaitToObstacle>
+		<PlayLevelMenuWaitToObstacle2>Attention right</PlayLevelMenuWaitToObstacle2>
+		<PlayLevelMenuWaitToObstacle3>Attention in front of you</PlayLevelMenuWaitToObstacle3>
+		<PlayLevelMenuAvoidObstacle>Unfortunately you ran in.</PlayLevelMenuAvoidObstacle>
+		<PlayLevelMenuAvoidObstacle2>Evaded.</PlayLevelMenuAvoidObstacle2>
+		<PlayLevelMenuAvoidObstacle3>Great, steeplechase completed!</PlayLevelMenuAvoidObstacle3>
+		<PlayLevelMenuQuestion>Question!</PlayLevelMenuQuestion>
+		<PlayLevelMenuSolutionQuestion>Swipe left for answer A, up for B and right for C.</PlayLevelMenuSolutionQuestion>
+		<PlayLevelMenuSolutionQuestion2>Correct.</PlayLevelMenuSolutionQuestion2>
+		<PlayLevelMenuSolutionQuestion3>Great, quiz completed!</PlayLevelMenuSolutionQuestion3>
+		<PlayLevelMenuSolutionQuestion4>Wrong!</PlayLevelMenuSolutionQuestion4>
+		<PlayLevelMenuNextNode>Here starts the level. Swipe up to exit the level. Otherwise you will stay here.</PlayLevelMenuNextNode>
+		<PlayLevelMenuExplanation>In this menu, you can move around. You can do this by swiping left or right. If you are at a person with a minigame you can play it by pressing on the upper half of the screen. 
+		Basically, you have to collect all items to finish the level. By pressing on the lower half of the screen you can listen which items you have collected. If you swipe up you can exit the level.
+		Your collected items will be saved.</PlayLevelMenuExplanation>
+		<PlayLevelMenuExplanation2>This menu is for playing a minigame. When you have finished the minigame you can press on the upper half of the screen to play it again. You can leave this place by pressing the lower half of the screen. 
+		If you play a fight as a minigame you have to swipe in the direction of the opponent. Of course you have to put on headphones to determine that. If the opponent comes from the left  you have to swipe to the left. 
+		If he comes from the front side swipe up and if he comes from the right side swipe right. During the steeplechase you must avoid the obstacles so if the obstacle comes from the front you have to swipe left or right. 
+		If you are playing a quiz you will need to swipe left for the answer A, up for B and right for C.</PlayLevelMenuExplanation2>
+		<CreateLevelMenuAwake>. Menu to edit the level. Upper half to edit, lower half to delete the level, if one exists</CreateLevelMenuAwake>
+		<CreateLevelMenuDeleteLevelButton>Are you sure you want to delete the level? Upper half for no, lower half for yes!</CreateLevelMenuDeleteLevelButton>
+		<CreateLevelMenuDeleteLevelButton2>No level available!</CreateLevelMenuDeleteLevelButton2>
+		<CreateLevelMenuYesButton>Level deleted! </CreateLevelMenuYesButton>
+		<CreateLevelMenuNoButton>Level not deleted! Upper half of the screen to edit the level.</CreateLevelMenuNoButton>
+		<CreateLevelMenuEditNodeButton>No node available!</CreateLevelMenuEditNodeButton>
+		<CreateLevelMenuNewNodeButton>Node number</CreateLevelMenuNewNodeButton>
+		<CreateLevelMenuNewNodeButton2>With or without a minigame? Upper half with a minigame, lower half without.</CreateLevelMenuNewNodeButton2>
+		<CreateLevelMenuNewNodeButton3>Please save the changed node to create a new one.</CreateLevelMenuNewNodeButton3>
+		<CreateLevelMenuChangeNodeButton>You can change the node now. Upper half if the node is to be with a minigame, lower half without a minigame.</CreateLevelMenuChangeNodeButton>
+		<CreateLevelMenuDeleteNodeButton>Node deleted!</CreateLevelMenuDeleteNodeButton>
+		<CreateLevelMenuSaveButton>Node saved!</CreateLevelMenuSaveButton>
+		<CreateLevelMenuSaveButton2>You have already saved this node!</CreateLevelMenuSaveButton2>
+		<CreateLevelMenuStopQuestionButton>Answer. A left, B up or for C swipe right.</CreateLevelMenuStopQuestionButton>
+		<CreateLevelMenuAnswer>Upper half for new question, lower half to exit the quiz.</CreateLevelMenuAnswer>
+		<CreateLevelMenuDirectionOpponent>Upper half for new opponent, lower half to exit the fight.</CreateLevelMenuDirectionOpponent>
+		<CreateLevelMenuDirectionObstacle>Upper half for new obstacle, lower half to exit the steeplechase.</CreateLevelMenuDirectionObstacle>
+		<NavigationCreateLevelNavigateBackgroundMenu>First of all choose a background music for the level. Upper half to select a music, lower half to listen, swipe for more.</NavigationCreateLevelNavigateBackgroundMenu>
+		<NavigationCreateLevelNavigateNodeNameMenu>Node Name. Press on the screen to start, a second time to stop recording.</NavigationCreateLevelNavigateNodeNameMenu>
+		<NavigationCreateLevelNavigateMinigameMenu>Choose a minigame, swipe for more. </NavigationCreateLevelNavigateMinigameMenu>
+		<NavigationCreateLevelNavigateItemMenu>Choose an item, swipe for more. </NavigationCreateLevelNavigateItemMenu>
+		<NavigationCreateLevelNavigateQuizMenu>Question Recording with three answers. For an example swipe down. Press on the upper half to start, a second time to stop recording.
+		Lower half to finish the quiz if there is at least one question.</NavigationCreateLevelNavigateQuizMenu>
+		<NavigationCreateLevelNavigateExitNodeMenu>End of the node. Lower half to save the current node otherwise it will be discarded. Upper half for new node. If you have finished your node creation swipe right.</NavigationCreateLevelNavigateExitNodeMenu>
+		<NavigationCreateLevelNavigateFightMenu>Time until opponent comes. Press on the screen to start timing, a second time to finish it.</NavigationCreateLevelNavigateFightMenu>
+		<NavigationCreateLevelNavigateOpponentMenu>Choose an opponent. Upper half to select an opponent, lower half to listen, swipe for more.</NavigationCreateLevelNavigateOpponentMenu>
+		<NavigationCreateLevelNavigateExitFightMenu>Where should the enemy comes from? Direction left, right or forward, please swipe in the respective direction.</NavigationCreateLevelNavigateExitFightMenu>
+		<NavigationCreateLevelNavigateSteeplechaseMenu>Time until obstacle comes. Press on the screen to start timing, a second time to finish it.</NavigationCreateLevelNavigateSteeplechaseMenu>
+		<NavigationCreateLevelNavigateObstacleMenu>Choose an obstacle, swipe for more. </NavigationCreateLevelNavigateObstacleMenu>
+		<NavigationCreateLevelNavigateExitSteeplechaseMenu>Where should the obstacle comes from? Direction left, right or forward, please swipe in the respective direction.</NavigationCreateLevelNavigateExitSteeplechaseMenu>
+		<NavigationCreateLevelNavigateEditLevelMenu>Upper half of the screen to edit a node, lower half for a new node.</NavigationCreateLevelNavigateEditLevelMenu>
+		<NavigationCreateLevelNavigateSelectNodeMenu>Choose a node, swipe for more. Node 0 .</NavigationCreateLevelNavigateSelectNodeMenu>
+		<NavigationCreateLevelNavigateChangeNodeMenu>Upper half of the screen to change the node, lower half to delete the node.</NavigationCreateLevelNavigateChangeNodeMenu>
+		<NavigationCreateLevelSwipeUp>Please change the node first!</NavigationCreateLevelSwipeUp>
+		<NavigationCreateLevelSwipeUp2>Created node discarded!</NavigationCreateLevelSwipeUp2>
+		<NavigationCreateLevelSwipeUp3>You have already saved the node! To change it you have to edit the node. Swipe down for more information!</NavigationCreateLevelSwipeUp3>
+		<NavigationCreateLevelLevelOptionMenuExplanation>Menu to edit or delete a level. If you press on the upper half of the screen you can edit or create a level. If you press on the lower half you can delete the current level. 
+		Swipe up to go back to the main menu.</NavigationCreateLevelLevelOptionMenuExplanation>
+		<NavigationCreateLevelEditLevelMenuExplanation>Menu to edit or create a node. If you press on the upper half of the screen you can edit a node. If you press on the lower half you can create a node.
+		If you swipe up you will get back to the menu where you can edit or delete the current level.</NavigationCreateLevelEditLevelMenuExplanation>
+		<NavigationCreateLevelSelectNodeMenuExplanation>Menu to select a node that you want to edit. You select the current node by pressing on the screen. If you swipe left or right you can select another node.
+		If you swipe up you will get back to the menu where you can edit or delete the current level.</NavigationCreateLevelSelectNodeMenuExplanation>
+		<NavigationCreateLevelChangeNodeMenuExplanation>Menu to change or delete the current node. If you press on the upper half of the screen you can edit the current node. If you press on the lower half you can delete the current node.
+		If you swipe up you will get back to the menu where you can edit or delete the current level.</NavigationCreateLevelChangeNodeMenuExplanation>
+		<NavigationCreateLevelBackgroundMenuExplanation>Menu to select a background music for the level. If you press on the upper half of the screen you can select the current music. 
+		If you press on the lower half you can listen to the current music. You can switch between different background music by swiping left or right.
+		If you swipe up you will get back to the menu where you can edit or delete the current level.</NavigationCreateLevelBackgroundMenuExplanation>
+		<NavigationCreateLevelCreateNodeMenuExplanation>Menu to decide if your node should be with or without a minigame. If you press on the upper half of the screen your node is with a minigame. If you press on the lower half your node is without a minigame.
+		If you swipe up you will get back to the menu where you can edit or delete the current level.</NavigationCreateLevelCreateNodeMenuExplanation>
+		<NavigationCreateLevelItemMenuExplanation>Menu to select an item for the node. You select the current item by pressing on the screen. If you swipe left or right you can select another item.
+		If you swipe up you will get back to the menu where you can decide if your node should be with or without a minigame.</NavigationCreateLevelItemMenuExplanation>
+		<NavigationCreateLevelExitNodeExplanation>Menu to decide if your created node should be saved or discarded. To save the created node press on the lower half of the screen. If you want to create a new node press the upper half of the screen. 
+		Attention, if you create a new node and you have not saved the old one, the old node will be discarded! When you finished the node creation, swipe right. 
+		If you swipe up you will get back to the menu where you can choose the item for the node, if you have not already saved the node. 
+		To edit the saved node, swipe to the right and in the next menu, press edit level, edit node and then select the respective node.</NavigationCreateLevelExitNodeExplanation>
+		<NavigationCreateLevelNodeNameMenuExplanation>Menu to give your node with minigame a name. Press on the screen to start recording. Then you say a name such as knight or magician
+		and press the screen again to stop recording. If you swipe up you will get back to the menu where you can decide if your node should be with or without a minigame.</NavigationCreateLevelNodeNameMenuExplanation>
+		<NavigationCreateLevelMinigameMenuExplanation>Menu to give the node a minigame. You select the current minigame by pressing on the screen. If you swipe left or right you can select another minigame.
+		If you swipe up you will get back to the menu where you can give your node a name.</NavigationCreateLevelMinigameMenuExplanation>
+		<NavigationCreateLevelQuizMenuExplanation>Menu to record questions and answers for your quiz. Press on the upper half of the screen to start recording. Then you say a question with three answer options 
+		and press again on the upper half of the screen to finish the recording. Attention, your answer must have three answer options! For example, you say the following during the recording. What is the name of Homer Simpsons son, 
+		A Moe, B Lenny or C Bart? When you have finished the recording you have to swipe in the direction for the right answer. For A left, for B up and for C to the right. 
+		Then you have to decide if you want another question or you finish the quiz by pressing the lower half of the screen.</NavigationCreateLevelQuizMenuExplanation>
+		<NavigationCreateLevelFightMenuExplanation>Menu to decide how long it will take until the next or first opponent comes. Press on the screen to start timing, a second time to finish it.
+		If you swipe up you will get back to the menu where you can give your node a minigame, the created fight of this node will be discarded.</NavigationCreateLevelFightMenuExplanation>
+		<NavigationCreateLevelOpponentMenuExplanation>Menu to select the next opponent. If you press on the upper half of the screen, you can select the next opponent. 
+		If you press on the lower half, you can listen to the current opponent. You can switch between different opponents by swiping left or right.
+		If you swipe up you will get back to the menu where you can decide how long it will take until the next opponent comes.</NavigationCreateLevelOpponentMenuExplanation>
+		<NavigationCreateLevelExitFightMenuExplanation>Menu to decide where the opponent should come from and if there should be another opponent or if the fight is over.
+		First, you have to decide whether the opponent should come from the left, right or forward. Swipe to the left for left, for right to right and if the opponent comes forward swipe up. 
+		Then you have to decide if there should be another opponent. For a new opponent press on the upper half of the screen. To finish the fight press on the lower half.</NavigationCreateLevelExitFightMenuExplanation>
+		<NavigationCreateLevelSteeplechaseMenuExplanation>Menu to decide how long it will take until the next or first obstacle comes. Press on the screen to start timing, a second time to finish it.
+		If you swipe up you will get back to the menu where you can give your node a minigame, the created steeplechase of this node will be discarded.</NavigationCreateLevelSteeplechaseMenuExplanation>
+		<NavigationCreateLevelObstacleMenuExplanation>Menu to select the next obstacle. If you press on the screen you can select the next obstacle. You can switch between different obstacles by swiping left or right.
+		If you swipe up you will get back to the menu where you can decide how long it will take until the next obstacle comes.</NavigationCreateLevelObstacleMenuExplanation>
+		<NavigationCreateLevelExitSteeplechaseMenuExplanation>Menu to decide where the obstacle should come from and if there should be another obstacle or if the steeplechase is over.
+		First you have to decide whether the obstacle should come from the left, right or forward. Swipe to the left for left, for right to right and if the obstacle comes forward swipe up. 
+		Then you have to decide if there should be another obstacle. For a new obstacle press on the upper half of the screen. To finish the steeplechase press on the lower half.</NavigationCreateLevelExitSteeplechaseMenuExplanation>
+		<NavigationCreateLevelErrorExplanation>Unfortunately no explanation available!</NavigationCreateLevelErrorExplanation>
+		<NavigationCreateLevelSwipeRight>Please save the changed node first to continue!</NavigationCreateLevelSwipeRight>
+		<NetworkMenuAwake>Menu to share or download created games, first you have to sign up. Press the upper half to sign up, lower half to register.</NetworkMenuAwake>
+		<NetworkMenuEmail>The password was sent to your email address.</NetworkMenuEmail>
+		<NetworkMenuRegisterButton>Upper half to enter a name for your account, lower half to confirm it.</NetworkMenuRegisterButton>
+		<NetworkMenuConfirmNameButton>Upper half to enter a password for your account, lower half to confirm it.</NetworkMenuConfirmNameButton>
+		<NetworkMenuConfirmNameButton1>This name already exists, please select another one.</NetworkMenuConfirmNameButton1>
+		<NetworkMenuConfirmPasswordButton>Upper half to enter an email address for your account, lower half to confirm it.</NetworkMenuConfirmPasswordButton>
+		<NetworkMenuCheckEmail>This email address already exists. Please select another one.</NetworkMenuCheckEmail>
+		<NetworkMenuCheckEmail1>No valid email address.</NetworkMenuCheckEmail1>
+		<NetworkMenuCreateAccount>The account was successfully created. Now you have to sign up, upper half to enter your name from the account, lower half to confirm it.</NetworkMenuCreateAccount>
+		<NetworkMenuCreateAccount1>Account could not be created. Please try again. </NetworkMenuCreateAccount1>
+		<NetworkMenuLoginButton>Upper half to enter your name from your account, lower half to confirm it.</NetworkMenuLoginButton>
+		<NetworkMenuCheckName>Upper half to enter your password from your account, lower half to confirm it. If you forgot your password swipe right.</NetworkMenuCheckName>	
+		<NetworkMenuCheckName1>This account doesn't exist, please create it first.</NetworkMenuCheckName1>
+		<NetworkMenuLoginToDB>You are logged in now. Upper half to search for a game by the creator, lower half to upload your game.</NetworkMenuLoginToDB>
+		<NetworkMenuLoginToDB1>Password is wrong please reenter.</NetworkMenuLoginToDB1>
+		<NetworkMenuUpload0>Game is uploading, please wait.</NetworkMenuUpload0>
+		<NetworkMenuUpload>Your game has been successfully uploaded, if you press the upper half of the screen you can search for a game. Swipe up to go back to the main menu.</NetworkMenuUpload>
+		<NetworkMenuUpload1>Error while uploading your game, please try again.</NetworkMenuUpload1>
+		<NetworkMenuUpload2>You have not created a game yet, so you can not upload one.</NetworkMenuUpload2>
+		<NetworkMenuSearchButton>Upper half to enter a account name from which you want to search for a game, lower half to confirm it.</NetworkMenuSearchButton>
+		<NetworkMenuSearchUser>Upper half to play the downloaded game from this user, lower half to download the game from this user.</NetworkMenuSearchUser>
+		<NetworkMenuSearchUser1>This account is not available please search for another one.</NetworkMenuSearchUser1>
+		<NetworkMenuDownload0>Game is downloading, please wait.</NetworkMenuDownload0>
+		<NetworkMenuDownload>Game successfully downloaded.</NetworkMenuDownload>
+		<NetworkMenuDownload1>The user has not uploaded a game yet.</NetworkMenuDownload1>
+		<NetworkMenuPlaySavedGameButton>Level selection for playing a level from the downloaded game, swipe for more. Level 1</NetworkMenuPlaySavedGameButton>
+		<NetworkMenuPlaySavedGameButton1>You have not downloaded a game from this user yet.</NetworkMenuPlaySavedGameButton1>
+		<NetworkMenuPlayLevel>The user did not create the previous level.</NetworkMenuPlayLevel>
+		<NetworkMenuPlayLevel1>This level was not created.</NetworkMenuPlayLevel1>
+		<NetworkMenuLoginRegisterMenu>Menu to share a game or download a game from another user. You need an account for that. Press the lower half of the screen to create an account. Press the upper half of the screen 
+		if you have already an account and want to sign up. If you swipe up you will get back to the main menu.</NetworkMenuLoginRegisterMenu>
+		<NetworkMenuRegisterNameMenu>Menu to give your account a name. Upper half of the screen is a text field for the name of your account, lower half to confirm this. If you swipe up you will get back to the menu where you can log in 
+		or register. </NetworkMenuRegisterNameMenu>
+		<NetworkMenuRegisterPasswordMenu>Menu to give your account a password. Upper half of the screen is a text field for the password of your account, lower half to confirm this. 
+		If you swipe up you will get back to the menu where you can choose a name for your account.</NetworkMenuRegisterPasswordMenu>
+		<NetworkMenuRegisterEmailMenu>Menu to give your account an email address. Upper half of the screen is a text field for the email address of your account, lower half to confirm this. 
+		If you swipe up you will get back to the menu where you can choose a password for your account.</NetworkMenuRegisterEmailMenu>
+		<NetworkMenuLoginNameMenu>Menu to enter the name from your account to log in. Upper half of the screen is a text field for the name of your account, lower half to confirm this. 
+		If you swipe up you will get back to the menu where you can log in or register.</NetworkMenuLoginNameMenu>
+		<NetworkMenuLoginPasswordMenu>Menu to enter the password from your account to log in. Upper half of the screen is a text field for the password of your account, lower half to confirm this. If you swipe right your password will be send to your email address. 
+		If you swipe up you will get back to the menu where you can enter the name from your account.</NetworkMenuLoginPasswordMenu>
+		<NetworkMenuUploadMenu>Menu to decide whether you want to share your created game or download a game from another user. Upper half of the screen if you want to download a game, lower half to upload your game. 
+		If you swipe up you will get back to the main menu.</NetworkMenuUploadMenu>
+		<NetworkMenuSearchMenu>Menu to enter the account name after which you want to search a game. Upper half of the screen is a text field for the name, lower half to confirm this. 
+		If you swipe up you will get back to the menu where you can decide whether you want to share your game or download one.</NetworkMenuSearchMenu>
+		<NetworkMenuDownloadMenu>Menu to download a game from the requested user or play a downloaded game. Lower half of the screen to download a game, upper half to play a downloaded game. 
+		If you swipe up you will get back to the menu where you can search for an account name.</NetworkMenuDownloadMenu>
+		<NetworkMenuLevelMenu>Here you can choose a level from the downloaded game which you want to play. You can swipe left or right to choose one of them. 
+		You can only play level 2 after you have finished level 1! After you have chosen a level press on the screen! If you swipe up you switch back to the main menu.</NetworkMenuLevelMenu>
+		<PlayLevelMenuFinishedLevelNetwork>Congratulation, you finished the game! To go back to the previous menu, swipe upwards.</PlayLevelMenuFinishedLevelNetwork>
+		<PlayLevelMenuFinishedLevelNetwork2>Great, you completed the level! To go back to the previous menu, swipe upwards.</PlayLevelMenuFinishedLevelNetwork2>
+	</language>
+	<language>
+		<StartMenuExplanation>Drücke auf den Bildschirm um in das Hauptmenü zu wechseln. Wische nach oben um die Sprache zu wechseln. Um die Anwendung zu beenden wische nach rechts. Für mehr Informationen wische nach unten!</StartMenuExplanation>
+		<StartMenuGameExplanation>In dieser Anwendung kannst du dir dein eigenes Spiel erstellen. Wenn du einmal nicht weiter weißt kannst du jeder Zeit auf dem Bildschirm nach unten wischen dann wird dir erklärt was du im Moment machen kannst. 
+									Beim Erstellen des Spiels kannst du auch nach oben wischen um auf ein vorherliegendes Menü zu kommen.
+									Grundsätzlich besteht dein erstelltes Spiel aus bis zu fünf Levels. Jedes Level hat verschiedene Knoten die du erstellen kannst.
+									Ein Knoten kann entweder nur ein Gegenstand sein den man finden muss oder es ist ein Knoten mit einem Minispiel das du bestimmst. 
+									Wenn du dich für den Knoten mit Minispiel entschlossen hast kannst du dich zwischen einen Kampf einen Hindernislauf oder einen Rätsel entscheiden. 
+									Du kannst dem Minispiel auch per Audioeingabe einen Namen geben, zum Beispiel nennst du deinen Knoten mit Minispiel, Ritter oder König, der dann dieses Minispiel zur Verfügung stellt. 
+									Als Belohnung wenn man ein Minispiel gewonnen hat bekommt man auch einen Gegenstand den du bestimmst. 
+									Wichtig ist auch dass man für das Spielen des Kampfes einen Kopfhörer benötigt um hören zu können von welcher Seite sich der Gegner nähert. 
+									Du kannst dein erstelltes Spiel auch teilen oder ein Spiel von einem anderen Nutzer herunterladen.
+									Um die Anwendung zu beenden wische nach rechts.</StartMenuGameExplanation>
+		<MainMenuAwake>Hauptmenü! Drücke auf die obere Hälfte des Bildschirms um ein Level zu erstellen, untere Hälfte zum Spielen! Um ein erstelltes Spiel zu teilen oder ein Spiel von einem anderen Nutzer herunterzuladen, wische nach links. Um die Anwendung zu beenden wische nach rechts.</MainMenuAwake>
+		<MainMenuCreateButton>Levelauswahl für das Erstellen eines Levels, wischen für weitere. Level 1</MainMenuCreateButton>
+		<MainMenuPlayButton>Levelauswahl für das Spielen eines Levels, wischen für Weitere. Level 1</MainMenuPlayButton>
+		<MainMenuWait>Bitte Warten!</MainMenuWait>
+		<MainMenuWait2>Bitte Warten! Im Spiel kannst du dann jederzeit deine eingesammelten Gegenstände abfragen indem du auf die untere Hälfte des Bildschirms drückst.</MainMenuWait2>
+		<MainMenuCreateLevelButton>Bitte zuerst das vorige Level erstellen!</MainMenuCreateLevelButton>
+		<MainMenuPlayLevelButton>Bitte zuerst das vorige Level beenden!</MainMenuPlayLevelButton>
+		<MainMenuPlayLevelButton2>Bitte zuerst dieses Level erstellen!</MainMenuPlayLevelButton2>
+		<MainMenuPlayLevelButton3>Bitte zuerst das vorige Level erstellen!</MainMenuPlayLevelButton3>
+		<MainMenuExplanation>Du bist im Moment im Hauptmenü. Um ein Level zu erstellen drücke auf die obere Hälfte des Bildschirms. Um ein Level zu Spielen, drücke auf die untere Hälfte des Bildschirms. Um die Sprache zu ändern wische nach oben. Um ein erstelltes Spiel zu teilen oder ein Spiel von einem anderen Nutzer herunterzuladen, wische nach links. Um die Anwendung zu beenden wische nach rechts.</MainMenuExplanation>
+		<CreateLevelExplanation>Hier kannst du dir ein Level aussuchen das du erstellen möchtest. Du kannst nach links oder rechts wischen um dir eines auszusuchen. Level 2 kannst du erst erstellen sobald du Level 1 fertig hast! Sobald du eines ausgesucht hast drücke auf den Bildschirm! Wenn du nach oben wischt wechselst du zurück ins Hauptmenü.</CreateLevelExplanation>
+		<StartGameMenuExplanation>Hier kannst du dir ein Level aussuchen das du spielen möchtest. Du kannst nach links oder rechts wischen um dir eines auszusuchen. Level 2 kannst du erst spielen sobald du Level 1 abgeschlossen hast! Sobald du eines ausgesucht hast drücke auf den Bildschirm! Wenn du nach oben wischt wechselst du zurück ins Hauptmenü.</StartGameMenuExplanation>
+		<PlayLevelMenuPlayLevel>Willkommen zu Level!</PlayLevelMenuPlayLevel>
+		<PlayLevelMenuPlayNodeLevelEnd>Hier ist das Level zu Ende, folgendes fehlt dir noch um das Level abzuschließen.</PlayLevelMenuPlayNodeLevelEnd>
+		<PlayLevelMenuPlayNodeItemCollect>Hier ist eine!</PlayLevelMenuPlayNodeItemCollect>
+		<PlayLevelMenuPlayNodeItemCollect2>Hier ist ein!</PlayLevelMenuPlayNodeItemCollect2>
+		<PlayLevelMenuPlayNodeItemCollect3>. Das werde ich mir mitnehmen vielleicht brauche ich es dann später.</PlayLevelMenuPlayNodeItemCollect3>
+		<PlayLevelMenuPlayNodeAgain>Hier habe ich vorher einen Gegenstand gefunden.</PlayLevelMenuPlayNodeAgain>
+		<PlayLevelMenuPlayNodeWalk>Wische nach rechts um weiter oder links um zurückzugehen.</PlayLevelMenuPlayNodeWalk>
+		<PlayLevelMenuLoadNodeName>Die Person hat ein Minispiel für dich. Wenn du dieses Minispiel spielen willst dann drücke auf die obere Hälfte ansonsten kannst du in eine Richtung wischen um weiterzugehen.</PlayLevelMenuLoadNodeName>
+		<PlayLevelMenuLoadNodeName2>Hier habe ich schon einmal etwas bekommen. Willst du trotzdem das Minispiel noch einmal spielen? Dann drücke auf die obere Hälfte ansonsten wische in eine Richtung um weiterzugehen.</PlayLevelMenuLoadNodeName2>
+		<PlayLevelMenuFinishedLevel>Gratulation, du hast das Spiel durchgespielt! Um in das Hauptmenü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevel>
+		<PlayLevelMenuFinishedLevel2>Super du hast das Level abgeschlossen! Um in das Hauptmenü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevel2>
+		<PlayLevelMenuPlayNodeButton>Hier gibt es ein Rätsel zu lösen.</PlayLevelMenuPlayNodeButton>
+		<PlayLevelMenuInventoryButton>Folgende Gegenstände hast du!</PlayLevelMenuInventoryButton>
+		<PlayLevelMenuInventoryButton2>Du hast noch keine Gegenstände.</PlayLevelMenuInventoryButton2>
+		<PlayLevelMenuExitNodeButton>Wische in eine Richtung um weiterzugehen.</PlayLevelMenuExitNodeButton>
+		<PlayLevelMenuWaitToFight>Hier gibt es einen Kampf zu gewinnen. Wische in die Richtung von der der Gegner kommt.</PlayLevelMenuWaitToFight>
+		<PlayLevelMenuFightOpponent>Besiegt</PlayLevelMenuFightOpponent>
+		<PlayLevelMenuFightOpponent2>Super, Kampf gewonnen.</PlayLevelMenuFightOpponent2>
+		<PlayLevelMenuFightOpponent3>Als Belohnung habe ich auch etwas bekommen. Eine!</PlayLevelMenuFightOpponent3>
+		<PlayLevelMenuFightOpponent4>Als Belohnung habe ich auch etwas bekommen. Einen!</PlayLevelMenuFightOpponent4>
+		<PlayLevelMenuFightOpponent5>Als Belohnung habe ich auch etwas bekommen. Ein!</PlayLevelMenuFightOpponent5>
+		<PlayLevelMenuFightOpponent6>Hier habe ich schon einmal einen Gegenstand bekommen, jetzt gibt es leider nichts mehr.</PlayLevelMenuFightOpponent6>
+		<PlayLevelMenuFightOpponent7>Wenn du das Minispiel noch einmal spielen willst drücke auf die obere Hälfte ansonsten auf die untere.</PlayLevelMenuFightOpponent7>
+		<PlayLevelMenuFightOpponent8>Leider verloren. </PlayLevelMenuFightOpponent8>
+		<PlayLevelMenuWaitToSteeplechase>Hier gibt es einen Hindernislauf zu absolvieren. Wische in eine Richtung um nicht in das Hindernis zu laufen.</PlayLevelMenuWaitToSteeplechase>
+		<PlayLevelMenuWaitToObstacle>Achtung links</PlayLevelMenuWaitToObstacle>
+		<PlayLevelMenuWaitToObstacle2>Achtung rechts</PlayLevelMenuWaitToObstacle2>
+		<PlayLevelMenuWaitToObstacle3>Achtung vor dir</PlayLevelMenuWaitToObstacle3>
+		<PlayLevelMenuAvoidObstacle>Leider hineingelaufen</PlayLevelMenuAvoidObstacle>
+		<PlayLevelMenuAvoidObstacle2>Ausgewichen.</PlayLevelMenuAvoidObstacle2>
+		<PlayLevelMenuAvoidObstacle3>Super, Hindernislauf geschafft!</PlayLevelMenuAvoidObstacle3>
+		<PlayLevelMenuQuestion>Frage !</PlayLevelMenuQuestion>
+		<PlayLevelMenuSolutionQuestion>Antwort A nach links, Antwort B nach oben und Antwort C nach rechts wischen.</PlayLevelMenuSolutionQuestion>
+		<PlayLevelMenuSolutionQuestion2>Richtig.</PlayLevelMenuSolutionQuestion2>
+		<PlayLevelMenuSolutionQuestion3>Super, Rätsel geschafft!</PlayLevelMenuSolutionQuestion3>
+		<PlayLevelMenuSolutionQuestion4>Falsch!</PlayLevelMenuSolutionQuestion4>
+		<PlayLevelMenuNextNode>Hier beginnt das Level. Um es zu beenden wische nach oben. Ansonsten bleibst du an der jetzigen Stelle.</PlayLevelMenuNextNode>
+		<PlayLevelMenuExplanation>In diesem Menü kannst du dich herum bewegen. Du tust das indem du nach links oder rechts wischst. Wenn du bei einer Person mit Minispiel bist kannst du dieses spielen indem du auf die obere Hälfte des Bildschirms drückst. 
+		Grundsätzlich musst du alle Gegenstände einsammeln um das Level zu schaffen. Welche Gegenstände du gerade hast kannst du dir anhören indem du auf die untere Hälfte des Bildschirms drückst. 
+		Wenn du nach oben wischst kannst du das Level beenden. Deine gesammelten Gegenstände werden gespeichert. </PlayLevelMenuExplanation>
+		<PlayLevelMenuExplanation2>Dieses Menü ist für das Spielen eines Minispiels. Wenn du das Minispiel beendet hast kannst du auf die obere Hälfte des Bildschirms drücken um es noch einmal zu spielen. 
+		Auf der unteren Hälfte des Bildschirms kannst du den aktuellen Ort verlassen. Während du ein Minispiel spielst musst du beim Kampf in die Richtung des Gegners wischen. Natürlich musst du dabei Kopfhörer aufsetzen um das festzustellen.
+		Wenn der Gegner von links kommt musst du nach links wischen. Wenn er von vorne kommt nach oben und wenn er von rechts kommt nach rechts wischen. Beim Hindernislauf darfst du nicht in das Hindernis hineinlaufen
+		also wenn das Hindernis von vorne kommt musst du nach links oder rechts wischen. Für den Fall dass du ein Rätsel spielst musst du für die Antwort a nach links, für b nach oben und für c nach rechts wischen.</PlayLevelMenuExplanation2>
+		<CreateLevelMenuAwake>. Menü zum bearbeiten des Levels. Obere Hälfte bearbeiten, untere Hälfte zum Löschen des Levels wenn eines vorhanden ist</CreateLevelMenuAwake>
+		<CreateLevelMenuDeleteLevelButton>Bist du sicher das du das Level löschen willst? Obere Hälfte für nein untere Hälfte für ja.</CreateLevelMenuDeleteLevelButton>
+		<CreateLevelMenuDeleteLevelButton2>Kein Level vorhanden!</CreateLevelMenuDeleteLevelButton2>
+		<CreateLevelMenuYesButton>Level gelöscht! </CreateLevelMenuYesButton>
+		<CreateLevelMenuNoButton>Level nicht gelöscht! Obere Hälfte des Bildschirms um das Level zu bearbeiten.</CreateLevelMenuNoButton>
+		<CreateLevelMenuEditNodeButton>Kein Knoten vorhanden!</CreateLevelMenuEditNodeButton>
+		<CreateLevelMenuNewNodeButton>Knoten Nummer</CreateLevelMenuNewNodeButton>
+		<CreateLevelMenuNewNodeButton2>Minispiel ja oder nein? Obere Hälfte mit, untere ohne Minispiel.</CreateLevelMenuNewNodeButton2>
+		<CreateLevelMenuNewNodeButton3>Bitte zuerst den geänderten Knoten speichern um einen neuen zu erstellen.</CreateLevelMenuNewNodeButton3>
+		<CreateLevelMenuChangeNodeButton>Du kannst jetzt den Knoten ändern. Obere Hälfte wenn der Knoten mit Minispiel sein soll, untere Hälfte ohne Minispiel.</CreateLevelMenuChangeNodeButton>
+		<CreateLevelMenuDeleteNodeButton>Knoten gelöscht!</CreateLevelMenuDeleteNodeButton>
+		<CreateLevelMenuSaveButton>Knoten gespeichert!</CreateLevelMenuSaveButton>
+		<CreateLevelMenuSaveButton2>Du hast diesen Knoten bereits gespeichert!</CreateLevelMenuSaveButton2>
+		<CreateLevelMenuStopQuestionButton>Antwort. A links, B oben, C rechts wischen</CreateLevelMenuStopQuestionButton>
+		<CreateLevelMenuAnswer>Obere Hälfte für neue Frage, untere Hälfte für das Beenden des Rätsels.</CreateLevelMenuAnswer>
+		<CreateLevelMenuDirectionOpponent>Obere Hälfte für neuen Gegner, untere Hälfte für das Beenden des Kampfes.</CreateLevelMenuDirectionOpponent>
+		<CreateLevelMenuDirectionObstacle>Obere Hälfte für neues Hindernis, untere Hälfte für das Beenden des Hindernislaufes.</CreateLevelMenuDirectionObstacle>
+		<NavigationCreateLevelNavigateBackgroundMenu>Zuerst suche dir eine Hintergrundmusik für das Level aus. Obere Hälfte auswählen, untere anhören, wischen für Weitere.</NavigationCreateLevelNavigateBackgroundMenu>
+		<NavigationCreateLevelNavigateNodeNameMenu>Knoten Name. Drücke auf den Bildschirm um zu starten, ein zweites mal zum Beenden der Aufnahme.</NavigationCreateLevelNavigateNodeNameMenu>
+		<NavigationCreateLevelNavigateMinigameMenu>Auswahl des Minispiels, wischen für Weitere.</NavigationCreateLevelNavigateMinigameMenu>
+		<NavigationCreateLevelNavigateItemMenu>Auswahl eines Gegenstandes, wischen für Weitere. </NavigationCreateLevelNavigateItemMenu>
+		<NavigationCreateLevelNavigateQuizMenu>Fragenaufnahme mit 3 Antwortmöglichkeiten. Für ein Beispiel wische nach unten. Drücke auf die obere Hälfte zum Starten, ein zweites mal zum Beenden der Aufnahme. 
+		Untere Hälfte zum Beenden des Rätsels wenn es mindestens eine Frage gibt. </NavigationCreateLevelNavigateQuizMenu>
+		<NavigationCreateLevelNavigateExitNodeMenu>Ende des Knotens. Untere Hälfte zum Speichern des aktuellen Knotens sonst wird er verworfen. Obere Hälfte für neuen Knoten. Wische nach rechts wenn du mit der Erstellung des Knotens fertig bist. </NavigationCreateLevelNavigateExitNodeMenu>
+		<NavigationCreateLevelNavigateFightMenu>Zeit bis Gegner kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, ein zweites mal um sie zu beenden.</NavigationCreateLevelNavigateFightMenu>
+		<NavigationCreateLevelNavigateOpponentMenu>Auswahl des Gegners. Obere Hälfte auswählen, untere anhören, wischen für Weitere. </NavigationCreateLevelNavigateOpponentMenu>
+		<NavigationCreateLevelNavigateExitFightMenu>Von wo soll der Gegner kommen? Richtung links, rechts oder von vorne, bitte in die jeweilige Richtung wischen.</NavigationCreateLevelNavigateExitFightMenu>
+		<NavigationCreateLevelNavigateSteeplechaseMenu>Zeit bis Hindernis kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, ein zweites mal um sie zu beenden.</NavigationCreateLevelNavigateSteeplechaseMenu>
+		<NavigationCreateLevelNavigateObstacleMenu>Auswahl des Hindernis, wischen für Weitere. </NavigationCreateLevelNavigateObstacleMenu>
+		<NavigationCreateLevelNavigateExitSteeplechaseMenu>Von wo soll das Hindernis kommen? Richtung links, rechts oder von vorne, bitte in die jeweilige Richtung wischen.</NavigationCreateLevelNavigateExitSteeplechaseMenu>
+		<NavigationCreateLevelNavigateEditLevelMenu>Obere Hälfte des Bilschirms zum Bearbeiten eines Knotens, untere Hälfte für einen neuen Knoten.</NavigationCreateLevelNavigateEditLevelMenu>
+		<NavigationCreateLevelNavigateSelectNodeMenu>Auswahl eines Knotens, wischen für Weitere. Knoten 0 .</NavigationCreateLevelNavigateSelectNodeMenu>
+		<NavigationCreateLevelNavigateChangeNodeMenu>Obere Hälfte zum Ändern des Knotens, untere Hälfte um den Knoten zu löschen.</NavigationCreateLevelNavigateChangeNodeMenu>
+		<NavigationCreateLevelSwipeUp>Bitte zuerst den Knoten ändern!</NavigationCreateLevelSwipeUp>
+		<NavigationCreateLevelSwipeUp2>Erstellter Knoten verworfen!</NavigationCreateLevelSwipeUp2>
+		<NavigationCreateLevelSwipeUp3>Du hast den Knoten bereits gespeichert! Um ihn zu ändern musst du den Knoten bearbeiten. Für mehr Informationen wische nach unten!</NavigationCreateLevelSwipeUp3>
+		<NavigationCreateLevelLevelOptionMenuExplanation>Menü um ein Level zu bearbeiten oder zu löschen. Wenn du auf die obere Hälfte des Bildschirms drückst kannst du ein Level bearbeiten oder erstellen. 
+		Wenn du auf die untere Hälfte drückst kannst du das aktuelle Level löschen. Um in das Hauptmenü zurück zu gehen, wische nach oben.</NavigationCreateLevelLevelOptionMenuExplanation>
+		<NavigationCreateLevelEditLevelMenuExplanation>Menü um einen Knoten zu bearbeiten oder zu erstellen. Wenn du auf die obere Hälfte des Bildschirms drückst kannst du einen Knoten bearbeiten. 
+		Wenn du auf die untere Hälfte drückst kannst du einen neuen Knoten erstellen. Wenn du nach oben wischst gelangst du zum Menü zurück in dem du das aktuelle Level bearbeiten oder löschen kannst.</NavigationCreateLevelEditLevelMenuExplanation>
+		<NavigationCreateLevelSelectNodeMenuExplanation>Menü um einen Knoten auszuwählen den du bearbeiten möchtest. Du wählst den aktuellen Knoten aus indem du auf den Bildschirm drückst.
+		Wenn du nach links oder rechts wischst kannst du einen anderen Knoten auswählen. Wenn du nach oben wischst gelangst du zum Menü zurück indem du das aktuelle Level bearbeiten oder löschen kannst.</NavigationCreateLevelSelectNodeMenuExplanation>
+		<NavigationCreateLevelChangeNodeMenuExplanation>Menü um den aktuellen Knoten zu ändern oder zu löschen. Wenn du auf die obere Hälfte des Bildschirms drückst kannst du den aktuellen Knoten bearbeiten. 
+		Wenn du auf die untere Hälfte drückst kannst du den aktuellen Knoten löschen. Wenn du nach oben wischst gelangst du zum Menü zurück indem du das aktuelle Level bearbeiten oder löschen kannst.</NavigationCreateLevelChangeNodeMenuExplanation>
+		<NavigationCreateLevelBackgroundMenuExplanation>Menü um dir eine Hintergrundmusik für das Level auszusuchen. Wenn du auf die obere Hälfte des Bildschirms drückst wählst du die aktuelle Hintergrundmusik aus. 
+		Wenn du auf die untere Hälfte drückst kannst du dir die aktuelle Hintergrundmusik anhören. Du kannst zwischen den verschiedenen Melodien wechseln indem du nach links oder rechts wischst.
+		Wenn du nach oben wischst gelangst du zum Menü zurück indem du das aktuelle Level bearbeiten oder löschen kannst.</NavigationCreateLevelBackgroundMenuExplanation>
+		<NavigationCreateLevelCreateNodeMenuExplanation>Menü indem du entscheidest ob dein Knoten mit oder ohne Minispiel sein soll. Wenn du auf die obere Hälfte des Bildschirms drückst ist dein Knoten mit Minispiel. 
+		Wenn du auf die untere Hälfte drückst dann ist dein Knoten ohne Minispiel. Wenn du nach oben wischst gelangst du zum Menü zurück indem du das aktuelle Level bearbeiten oder löschen kannst.</NavigationCreateLevelCreateNodeMenuExplanation>
+		<NavigationCreateLevelItemMenuExplanation>Menü um einen Gegenstand für den Knoten auszuwählen. Du wählst den aktuellen Gegenstand aus indem du auf den Bildschirm drückst.
+		Wenn du nach links oder rechts wischst kannst du einen anderen Gegenstand auswählen. Wenn du nach oben wischst gelangst du zum Menü zurück indem du entscheiden kannst ob dein Knoten mit oder ohne Minispiel sein soll.</NavigationCreateLevelItemMenuExplanation>
+		<NavigationCreateLevelExitNodeExplanation>Menü indem du entscheidest ob der erstellte Knoten gespeichert oder verworfen werden soll. Um den erstellten Knoten zu speichern drücke auf die untere Hälfte des Bildschirms.
+		Wenn du einen neuen Knoten erstellen möchtest dann drücke auf die obere Hälfte des Bildschirms. Achtung, wenn du einen neuen Knoten erstellst und davor den alten nicht gespeichert hast geht dieser verloren!
+		Wenn du mit dem Erstellen der Knoten fertig bist wische nach rechts. Wenn du nach oben wischst gelangst du zum Menü zurück indem du dich für den Gegenstand des Knotens entscheiden kannst wenn du den Knoten noch nicht gespeichert hast. 
+		Um den gespeicherten Knoten zu bearbeiten wische nach rechts und im nächsten Menü auf Level bearbeiten, Knoten bearbeiten und wähle dann den jeweiligen Knoten aus.</NavigationCreateLevelExitNodeExplanation>
+		<NavigationCreateLevelNodeNameMenuExplanation>Menü indem du deinen Knoten mit Minispiel einen Namen gibst. Drücke auf den Bildschirm um mit der Aufnahme zu starten. Sage einen Namen wie zum Beispiel Ritter oder König
+		und drücke erneut auf den Bildschirm um die Aufnahme zu beenden. Wenn du nach oben wischst gelangst du zum Menü zurück indem du entscheiden kannst ob dein Knoten mit oder ohne Minispiel sein soll.</NavigationCreateLevelNodeNameMenuExplanation>
+		<NavigationCreateLevelMinigameMenuExplanation>Menü indem du dem Knoten ein Minispiel zuteilst. Du wählst das aktuelle Minispiel aus indem du auf dem Bildschirm drückst.
+		Wenn du nach links oder rechts wischst kannst du ein anderes Minispiel auswählen. Wenn du nach oben wischst gelangst du zum Menü zurück indem du dem Knoten einen Namen gibst.</NavigationCreateLevelMinigameMenuExplanation>
+		<NavigationCreateLevelQuizMenuExplanation>Menü indem du die Fragen und Antworten für dein Rätsel aufnimmst. Drücke zunächst auf die obere Hälfte des Bildschirms um mit der Aufnahme zu beginnen. 
+		Dann stellst du deine Frage mit drei Antwortmöglichkeiten und anschließend drückst du nochmals auf die obere Hälfte des Bildschirms um die Aufnahme zu beenden. 
+		Achtung, deine Antwort muss drei Antwortmöglichkeiten haben. Ein Beispiel, folgendes sagst du während der Aufnahme. Wie heißt der Freund von Biene Maja, A Alfred, B Georg oder C Willi? 
+		Wenn du mit einer Aufnahme fertig bist musst du dann in die jeweilige Richtung wischen für die richtige Antwortmöglichkeit. Für A links, für B nach oben und für C nach rechts. 
+		Daraufhin kannst du entscheiden ob du eine weitere Frage aufnehmen willst oder das Rätsel beenden willst, dazu musst du auf die untere Hälfte des Bildschirms drücken.</NavigationCreateLevelQuizMenuExplanation>
+		<NavigationCreateLevelFightMenuExplanation>Menü indem du festlegst wie lange es braucht bis der nächste beziehungsweise erste Gegner kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, 
+		ein zweites mal um sie zu beenden. Wenn du nach oben wischst gelangst du zum Menü zurück indem du dem Knoten ein Minispiel zuteilst, der bislang erstellte Kampf dieses Knotens wird verworfen.</NavigationCreateLevelFightMenuExplanation>
+		<NavigationCreateLevelOpponentMenuExplanation>Menü indem du festlegst wer der nächste Gegner sein soll. Wenn du auf die obere Hälfte des Bildschirms drückst wählst du den aktuellen Gegner aus. 
+		Wenn du auf die untere Hälfte drückst kannst du dir den aktuellen Gegner anhören. Du kannst zwischen den verschiedenen Gegnern wechseln indem du nach links oder rechts wischst.
+		Wenn du nach oben wischst gelangst du zum Menü zurück indem du festlegst wie lange es braucht bis der nächste Gegner kommt.</NavigationCreateLevelOpponentMenuExplanation>
+		<NavigationCreateLevelExitFightMenuExplanation>Menü indem du entscheidest von welcher Richtung der Gegner kommt ob es einen weiteren Gegner geben soll oder ob der Kampf zu Ende ist. 
+		Zunächst musst du entscheiden ob der Gegner von links, rechts oder vorne kommen soll. Für links wische nach links, für vorne nach oben und für rechts nach rechts.
+		Danach musst du festlegen ob es einen weiteren Gegner geben soll. Für einen neuen Gegner drücke auf die obere Hälfte des Bildschirms. Um den Kampf zu beenden auf die untere Hälfte. </NavigationCreateLevelExitFightMenuExplanation>
+		<NavigationCreateLevelSteeplechaseMenuExplanation>Menü indem du festlegst wie lange es braucht bis das nächste beziehungsweise erste Hindernis kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, 
+		ein zweites mal um sie zu beenden. Wenn du nach oben wischst gelangst du zum Menü zurück indem du dem Knoten ein Minispiel zuteilst, der bislang erstellte Hindernislauf dieses Knotens wird verworfen.</NavigationCreateLevelSteeplechaseMenuExplanation>
+		<NavigationCreateLevelObstacleMenuExplanation>Menü indem du festlegst was das nächste Hindernis sein soll. Wenn du auf den Bildschirm drückst wählst du das aktuelle Hindernis aus. 
+		Du kannst zwischen den verschiedenen Hindernissen wechseln indem du nach links oder rechts wischst. Wenn du nach oben wischst gelangst du zum Menü zurück indem du festlegst wie lange es braucht bis das nächste Hindernis kommt.</NavigationCreateLevelObstacleMenuExplanation>
+		<NavigationCreateLevelExitSteeplechaseMenuExplanation>Menü indem du entscheidest von welcher Richtung das Hindernis kommt ob es ein weiteres Hindernis geben soll oder ob der Hindernislauf zu Ende ist. 
+		Zunächst musst du entscheiden ob das Hindernis von links, rechts oder vorne kommen soll. Für links wische nach links, für vorne nach oben und für rechts nach rechts.
+		Danach musst du festlegen ob es ein weiteres Hindernis geben soll. Für ein neues Hindernis drücke auf die obere Hälfte des Bildschirms. Um den Hindernislauf zu beenden auf die untere Hälfte.</NavigationCreateLevelExitSteeplechaseMenuExplanation>
+		<NavigationCreateLevelErrorExplanation>Leider keine Erklärung vorhanden!</NavigationCreateLevelErrorExplanation>
+		<NavigationCreateLevelSwipeRight>Bitte zuerst den geänderten Knoten speichern um fortzufahren!</NavigationCreateLevelSwipeRight>
+		<NetworkMenuAwake>Menü um erstellte Spiele zu teilen oder Spiele herunterzuladen, zuerst musst du dich anmelden. Obere Hälfte um dich anzumelden, untere Hälfte um dich zu registrieren.</NetworkMenuAwake>
+		<NetworkMenuEmail>Dir wurde das Passwort zu deiner Email Adresse zugesandt.</NetworkMenuEmail>
+		<NetworkMenuRegisterButton>Obere Hälfte um einen Namen für dein Profil einzugeben, untere Hälfte um diesen zu bestätigen.</NetworkMenuRegisterButton>
+		<NetworkMenuConfirmNameButton>Obere Hälfte um ein Passwort für dein Profil einzugeben, untere Hälfte um dieses zu bestätigen.</NetworkMenuConfirmNameButton>
+		<NetworkMenuConfirmNameButton1>Diesen Namen gibt es bereits bitte suche dir einen anderen aus.</NetworkMenuConfirmNameButton1>
+		<NetworkMenuConfirmPasswordButton>Obere Hälfte um eine Email Adresse für dein Profil einzugeben, untere Hälfte um diese zu bestätigen.</NetworkMenuConfirmPasswordButton>
+		<NetworkMenuCheckEmail>Diese Adresse gibt es bereits bitte suche dir eine andere aus.</NetworkMenuCheckEmail>
+		<NetworkMenuCheckEmail1>Keine gültige Email Adresse.</NetworkMenuCheckEmail1>
+		<NetworkMenuCreateAccount>Profil erfolgreich erstellt. Jetzt musst du dich anmelden, Obere Hälfte um deinen Namen vom Profil einzugeben, untere Hälfte um diesen zu bestätigen.</NetworkMenuCreateAccount>
+		<NetworkMenuCreateAccount1>Profil konnte nicht erstellt werden. Versuche es bitte noch einmal. </NetworkMenuCreateAccount1>
+		<NetworkMenuLoginButton>Obere Hälfte um deinen Namen vom Profil einzugeben, untere Hälfte um diesen zu bestätigen.</NetworkMenuLoginButton>
+		<NetworkMenuCheckName>Obere Hälfte um dein Passwort vom Profil einzugeben, untere Hälfte um diesen zu bestätigen. Wenn du es vergessen hast wische nach rechts.</NetworkMenuCheckName>	
+		<NetworkMenuCheckName1>Dieses Profil gibt es nicht bitte zuerst eines erstellen.</NetworkMenuCheckName1>
+		<NetworkMenuLoginToDB>Du bist jetzt angemeldet. Obere Hälfte um ein Spiel nach dem Ersteller zu suchen, untere Hälfte um dein Spiel hochzuladen.</NetworkMenuLoginToDB>
+		<NetworkMenuLoginToDB1>Passwort ist falsch bitte erneut eingeben.</NetworkMenuLoginToDB1>
+		<NetworkMenuUpload0>Spiel wird hochgeladen, bitte warten.</NetworkMenuUpload0>
+		<NetworkMenuUpload>Dein Spiel wurde erfolgreich hochgeladen, wenn du auf die obere Hälfte des Bildschirms drückst kannst du dann ein Spiel suchen. Um in das Hauptmenü zurückzugehen wische nach oben.</NetworkMenuUpload>
+		<NetworkMenuUpload1>Fehler beim hochladen deines Spiels, versuche es bitte noch einmal.</NetworkMenuUpload1>
+		<NetworkMenuUpload2>Du hast noch kein Spiel erstellt, darum kannst du auch noch keines hochladen.</NetworkMenuUpload2>
+		<NetworkMenuSearchButton>Obere Hälfte um einen Profil Namen einzugeben von dem du ein Spiel suchen willst, untere Hälfte um diesen zu bestätigen.</NetworkMenuSearchButton>
+		<NetworkMenuSearchUser>Obere Hälfte um das heruntergeladene Spiel dieses Nutzers zu spielen, untere Hälfte um ein Spiel dieses Nutzers herunterzuladen.</NetworkMenuSearchUser>
+		<NetworkMenuSearchUser1>Dieses Profil gibt es nicht bitte suche nach einem anderen.</NetworkMenuSearchUser1>
+		<NetworkMenuDownload0>Spiel wird heruntergeladen, bitte warten.</NetworkMenuDownload0>
+		<NetworkMenuDownload>Spiel erfolgreich heruntergeladen.</NetworkMenuDownload>
+		<NetworkMenuDownload1>Der Nutzer hat noch kein Spiel hochgeladen.</NetworkMenuDownload1>
+		<NetworkMenuPlaySavedGameButton>Levelauswahl für das Spielen eines Levels vom heruntergeladenen Spiel, wischen für Weitere. Level 1</NetworkMenuPlaySavedGameButton>
+		<NetworkMenuPlaySavedGameButton1>Du hast noch kein Spiel von diesem Nutzer heruntergeladen.</NetworkMenuPlaySavedGameButton1>
+		<NetworkMenuPlayLevel>Der Nutzer hat das vorige Level nicht erstellt.</NetworkMenuPlayLevel>
+		<NetworkMenuPlayLevel1>Dieses Level wurde nicht erstellt.</NetworkMenuPlayLevel1>
+		<NetworkMenuLoginRegisterMenu>Menü indem du ein Spiel teilen oder ein Spiel von einem anderen Nutzer herunterladen kannst. Dazu brauchst du ein Profil. Untere Hälfte
+		des Bildschirms um ein Profil zu erstellen, obere Hälfte wenn du schon ein Profil hast und dich anmelden willst. Wenn du nach oben wischt gelangst du zum Hauptmenü zurück.</NetworkMenuLoginRegisterMenu>
+		<NetworkMenuRegisterNameMenu>Menü indem du deinem Nutzer Profil einen Namen gibst. Obere Hälfte des Bildschirms ist ein Textfeld indem du den Namen einträgst und untere Hälfte um
+		diesen zu bestätigen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du dich Anmelden oder Registrieren kannst.</NetworkMenuRegisterNameMenu>
+		<NetworkMenuRegisterPasswordMenu>Menü indem du deinem Nutzer Profil ein Passwort gibst. Obere Hälfte des Bildschirms ist ein Textfeld indem du das Passwort einträgst und untere Hälfte um
+		dieses zu bestätigen. Wenn du nach rechts wischt wird dein Passwort zu deiner Email Adresse gesandt. Wenn du nach oben wischt gelangst du zum Menü zurück indem du deinem Nutzer Profil einen Namen gibst.</NetworkMenuRegisterPasswordMenu>
+		<NetworkMenuRegisterEmailMenu>Menü indem du deinem Nutzer Profil eine Email Adresse zuweist. Obere Hälfte des Bildschirms ist ein Textfeld indem du deine Email Adresse einträgst und untere Hälfte um
+		dieses zu bestätigen und das Profil zu erstellen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du deinem Nutzer Profil ein Passwort gibst.</NetworkMenuRegisterEmailMenu>
+		<NetworkMenuLoginNameMenu>Menü indem du deinen Namen vom Profil eingibst um dich anzumelden. Obere Hälfte des Bildschirms ist ein Textfeld indem du deinen Namen einträgst und untere Hälfte um
+		diesen zu bestätigen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du dich Anmelden oder Registrieren kannst.</NetworkMenuLoginNameMenu>
+		<NetworkMenuLoginPasswordMenu>Menü indem du dein Passwort vom Profil eingibst um dich anzumelden. Obere Hälfte des Bildschirms ist ein Textfeld indem du dein Passwort einträgst und untere Hälfte um
+		dieses zu bestätigen und dich anzumelden. Wenn du nach oben wischt gelangst du zum Menü zurück indem du deinen Namen vom Profil eingibst.</NetworkMenuLoginPasswordMenu>
+		<NetworkMenuUploadMenu>Menü indem du du dich entscheiden musst ob du dein erstelltes Spiel teilen willst oder ein Spiel von einem anderen Nutzer herunterladen willst.
+		Obere Hälfte wenn du eines herunterladen willst, untere Hälfte um dein Spiel hochzuladen. Wenn du nach oben wischt gelanst du in das Hauptmenü zurück.</NetworkMenuUploadMenu>
+		<NetworkMenuSearchMenu>Menü indem du einen Profil Namen eingibst nach dem suchen willst um ein Spiel herunterzuladen. Obere Hälfte des Bildschirms ist ein Textfeld indem du den Profil Namen einträgst und untere Hälfte um
+		diesen zu bestätigen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du dich entscheiden musst ob du dein Spiel teilen willst oder eines herunterladen willst.</NetworkMenuSearchMenu>
+		<NetworkMenuDownloadMenu>Menü indem du von dem gesuchten Nutzer ein Spiel herunterladen kannst oder ein heruntergeladenes Spiel spielen kannst. Untere Hälfte des Bildschirms um ein
+		Spiel herunterzuladen, obere Hälfte um ein heruntergeladenes Spiel zu spielen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du nach einem Profil Namen suchst.</NetworkMenuDownloadMenu>
+		<NetworkMenuLevelMenu>Hier kannst du dir ein Level von dem heruntergeladenen Spiel aussuchen das du spielen möchtest. Du kannst nach links oder rechts wischen um dir eines auszusuchen. Level 2 kannst du erst spielen sobald du Level 1 abgeschlossen hast! 
+		Sobald du eines ausgesucht hast drücke auf den Bildschirm! Wenn du nach oben wischt wechselst du zurück ins Hauptmenü.</NetworkMenuLevelMenu>
+		<PlayLevelMenuFinishedLevelNetwork>Gratulation, du hast das heruntergeladene Spiel durchgespielt! Um in das vorige Menü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevelNetwork>
+		<PlayLevelMenuFinishedLevelNetwork2>Super du hast das heruntergeladene Level abgeschlossen! Um in das vorige Menü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevelNetwork2>
+	</language>
+</languages>
