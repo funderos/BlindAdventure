@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 //Author: Stadler Viktor
+//Was created with the assistance of https://www.codeproject.com/Tips/443588/Simple-Csharp-FTP-Class
 //This class manages the methods to share and download a game
 public class NetworkMenu : MonoBehaviour {
 
