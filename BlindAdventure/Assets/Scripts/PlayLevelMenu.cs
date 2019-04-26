@@ -27,9 +27,9 @@ public class PlayLevelMenu : MonoBehaviour {
 	private List<KeyValuePair<int,int>> quizList; //List with the question numbers and the appropriate answers
 	private int currentQuestion; //Current question number
 
-	//Variables to play a steeplechase
-	private List <Obstacle> obstacleList; //List with the obstacles of a fight
-	private int obstacleIndex; //Index of the obstacle
+    //Variables to play a steeplechase
+    private List<KeyValuePair<int, Obstacle>> obstacleList; //List with the obstacles of a fight
+    private int obstacleIndex; //Index of the obstacle
 
 	//Variables to play a fight
 	private List <Opponent> opponentList; //List with the opponents of a fight
@@ -48,8 +48,6 @@ public class PlayLevelMenu : MonoBehaviour {
 	public AudioSource backgroundMusic6;
 	public AudioSource backgroundMusic7;
 
-	private List <Item> collectedItems = new List <Item> (); //List of collected items
-	private List <Item> necessaryItems = new List <Item> (); //List of necessary items
 	public Button playNodeButton; //Button to play a node
 	public Button restartMinigameButton; //Button to restart a minigame
 
@@ -165,17 +163,6 @@ public class PlayLevelMenu : MonoBehaviour {
 			
 				nodeList = level.getList ();
 
-			for (int i = 0; i < nodeList.Count; i++) { //Which items are necessary to complete the level
-				node = nodeList [i];
-				necessaryItems.Add (node.getItem ());
-			}
-				
-			for (int i = 0; i < nodeList.Count; i++) { //Which items are already collected
-				node = nodeList [i];
-				if (node.getNodeSolved() == true) {
-					collectedItems.Add (node.getItem ());
-				}
-			}
 			playNode ();
 		}
 	}
@@ -184,26 +171,25 @@ public class PlayLevelMenu : MonoBehaviour {
 	public void playNode() {
 		playNodeButton.interactable = false;
 		if (nodeIndex == nodeList.Count) { //End of the level
-			
-			List <Item> necessaryItemsTemp = new List<Item> (necessaryItems);
-			List <Item> collectedItemsTemp = new List<Item> (collectedItems);
-			for (int i = 0; i < collectedItemsTemp.Count; i++) { //Looks if all items are collected
-				Item necessaryItem = collectedItemsTemp [i];
-				for (int j = 0; j < necessaryItemsTemp.Count; j++) {
-					Item collectedItem = necessaryItemsTemp [j];
-					if (collectedItem == necessaryItem) {
-						necessaryItemsTemp.Remove (collectedItem);
-						break;
-					}
-				}
-			}
-			if (necessaryItemsTemp.Count == 0) { //When all items are collected
-				StartCoroutine (finishedLevel ());
-			} else {
-				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeLevelEnd"), false); //When items left -> audio output which ones missing
-				for (int i = 0; i < necessaryItemsTemp.Count; i++)
-					TTSManager.Speak (necessaryItemsTemp [i].getName (), true);
-			}
+            bool allItemsCollected = true;
+
+            for (int i = 0; i < nodeList.Count; i++) //Looks if all items are collected
+            {
+                node = nodeList[i];
+                if (!node.getNodeSolved())
+                {
+                    if(allItemsCollected)
+                    {
+                        TTSManager.Speak(xmlReader.translate("PlayLevelMenuPlayNodeLevelEnd"), false); //When items left -> audio output which ones missing
+                        allItemsCollected = false;
+                    }
+                    if(File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Item" + ".wav"))
+                    {
+                        playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                    }
+                }
+            }
+
 		} else {
 			node = nodeList [nodeIndex];
 			if (node.getQuiz () != null || node.getFight () != null || node.getSteeplechase () != null) { //If its a node with a minigame
@@ -213,15 +199,11 @@ public class PlayLevelMenu : MonoBehaviour {
 				}
 			} else { //Only a node with an item -> collect it
 				playNodeButton.interactable = false;
-				if (node.getNodeSolved() == false) {
-					Item item = node.getItem ();
-					collectedItems.Add (item);
-					if (((item.getName () == "Candle" || item.getName () == "Clock") && language == 1) || item.getName () == "Umbrella" && language == 0) { //Article "eine" or "an" 
-						TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect") + itemTranslation(item.getName ()) + xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect3"), true);
-					} else { //Article "ein" or "a"
-						TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect2") + itemTranslation(item.getName ()) + xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect3"), true);
-					}
-					node.setNodeSolved(true);
+				if (!node.getNodeSolved() && File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav")) {
+					TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect"), true);
+                    playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                    TTSManager.Speak(xmlReader.translate("PlayLevelMenuPlayNodeItemCollect3"), true);
+                    node.setNodeSolved(true);
 					LoadSaveGame.saveLevel(level);
 				} else {
 					TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeAgain"), true); 
@@ -234,25 +216,44 @@ public class PlayLevelMenu : MonoBehaviour {
 	//Outputs the current node name
 	IEnumerator loadNodeName(){
 		TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect2"), true);
-		while(TTSManager.IsSpeaking()){
-			yield return null;
-		}
-		WWW wav = new WWW ("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + ".wav"); 
-		yield return wav;
-		source.clip = wav.GetAudioClip(false);
-		source.Play ();
-		while(source.isPlaying){
-			yield return null;
-		}
-		if (node.getNodeSolved() == false) { //If node is not solved
+        while (TTSManager.IsSpeaking())
+        {
+            yield return null;
+        }
+        WWW wav = new WWW("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + ".wav");
+        yield return wav;
+        source.clip = wav.GetAudioClip(false);
+        source.Play();
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+        if (node.getNodeSolved() == false) { //If node is not solved
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuLoadNodeName"), false);
 		} else { //Node solved
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuLoadNodeName2"), false);
 		}
 	}
 
-	//Outputs an applause melody and saves the level as completed
-	IEnumerator finishedLevel(){
+    //Outputs persisent Audio File
+    IEnumerator playAudio(string path)
+    {
+        while (TTSManager.IsSpeaking())
+        {
+            yield return null;
+        }
+        WWW wav = new WWW(path);
+        yield return wav;
+        source.clip = wav.GetAudioClip(false);
+        source.Play();
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+    }
+
+    //Outputs an applause melody and saves the level as completed
+    IEnumerator finishedLevel(){
 		level.setLevelCompleted (true);
 		LoadSaveGame.saveLevel(level);
 		applause.Play ();
@@ -290,11 +291,25 @@ public class PlayLevelMenu : MonoBehaviour {
 	public void onInventoryButtonClick(){
 		if (swiped == false) {
 			Handheld.Vibrate ();
-			if (collectedItems.Count != 0) {
-				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuInventoryButton"), false);
-				for (int i = 0; i < collectedItems.Count; i++)
-					TTSManager.Speak (itemTranslation(collectedItems [i].getName ()), true);
-			} else {
+            bool anyItemsCollected = false;
+            for (int i = 0; i < nodeList.Count; i++) //Looks if all items are collected
+            {
+                node = nodeList[i];
+                if (node.getNodeSolved())
+                {
+                    if (!anyItemsCollected)
+                    {
+                        TTSManager.Speak(xmlReader.translate("PlayLevelMenuInventoryButton"), false);
+                        anyItemsCollected = true;
+                    }
+
+                    if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Item" + ".wav"))
+                    {
+                        playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                    }
+                }
+            }
+            if (!anyItemsCollected) {
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuInventoryButton2"), false); //No items collected
 			}
 		}
@@ -313,8 +328,8 @@ public class PlayLevelMenu : MonoBehaviour {
 				StartCoroutine (waitToOpponent (opponentList [opponentIndex].getTime ()));
 			} else {
 				obstacleIndex = 0; //minigame is a steeplechase
-				StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
-			}
+                StartCoroutine(waitToObstacle(obstacleList[obstacleIndex].Value.getTime()));
+            }
 		}
 	}
 
@@ -406,32 +421,52 @@ public class PlayLevelMenu : MonoBehaviour {
 		
 	//Outputs that the starting minigame is a steeplechase 
 	IEnumerator waitToSteeplechase() {
-		TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToSteeplechase"), true);
-		while(TTSManager.IsSpeaking()){
-			yield return null;
-		}
-		Steeplechase steepleChase = node.getSteeplechase ();
-		obstacleList = steepleChase.getList ();
-		obstacleIndex = 0;
-		StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
-	}
+        TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToSteeplechase"), true);
+        while (TTSManager.IsSpeaking())
+        {
+            yield return null;
+        }
+        Steeplechase steepleChase = node.getSteeplechase();
+        obstacleList = steepleChase.getList();
+        obstacleIndex = 0;
+        StartCoroutine(waitToObstacle(obstacleList[obstacleIndex].Value.getTime()));
+    }
 		
 	//Waits until the next obstacle appears and outputs where the obstacle come from: left, right or forward 
 	IEnumerator waitToObstacle(int secondsToWait) {
-		yield return new WaitForSeconds (secondsToWait);
-		string obstacleTyp = obstacleList [obstacleIndex].getTyp ();
-		int directionObstacle = obstacleList [obstacleIndex].getDirection ();
-		if (directionObstacle == 1) {  //Obstacle from left
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle") + obstacleTranslation(obstacleTyp), true);
-		}
-		else if (directionObstacle == 3){ //Obstacle from right
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle2") + obstacleTranslation(obstacleTyp), true);
-		}
-		else{ //Obstacle from forward
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle3") + obstacleTranslation(obstacleTyp), true);
-		}
-		StartCoroutine (avoidObstacle (directionObstacle));
-	}
+        yield return new WaitForSeconds(secondsToWait);
+        int directionObstacle = obstacleList[obstacleIndex].Value.getDirection();
+        int obstacleNumber = obstacleIndex + 1;
+        if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + obstacleNumber + ".wav"))
+        {
+            WWW wav = new WWW("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + obstacleNumber + ".wav");
+            yield return wav;
+            source.clip = wav.GetAudioClip(false);
+            source.Play();
+            while (source.isPlaying)
+            {
+                yield return null;
+            }
+
+            if (directionObstacle == 1)
+            {  //Obstacle from left
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle"), true);
+            }
+            else if (directionObstacle == 3)
+            { //Obstacle from right
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle2"), true);
+            }
+            else
+            { //Obstacle from forward
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle3"), true);
+            }
+            while (TTSManager.IsSpeaking())
+            {
+                yield return null;
+            }
+            StartCoroutine(avoidObstacle(directionObstacle));
+        }
+    }
 		
 	//Waits for swipe and checks if the obstacle is evaded
 	IEnumerator avoidObstacle(int directionObstacle) {
@@ -444,8 +479,8 @@ public class PlayLevelMenu : MonoBehaviour {
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuAvoidObstacle2"), true);
 			obstacleIndex++; //Next obstacle if exists
 			if (obstacleIndex < obstacleList.Count) { //Next obstacle
-				StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
-			} else {
+                StartCoroutine(waitToObstacle(obstacleList[obstacleIndex].Value.getTime()));
+            } else {
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuAvoidObstacle3"), true);
 				if (node.getNodeSolved() == false) { //Node solved for the first time
 					Item item = node.getItem ();

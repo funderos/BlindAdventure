@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/NetworkScene.unity
+- path: Assets/CreateLevelScene.unity
   isLoaded: 1
   isActive: 1

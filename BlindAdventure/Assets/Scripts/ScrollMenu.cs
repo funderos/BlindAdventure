@@ -170,39 +170,6 @@ public class ScrollMenu : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 						childName [2] = "Witch";
 				}
 				typ = "opponent";
-			} else if (container.GetChild (0).name == "TreeStump"){
-				if (i == 0) {
-					if (language == 1)
-						childName [i] = "Baumstumpf";
-					else
-						childName [i] = "Tree Stump";
-				} else if (i == 1) {
-					if (language == 1)
-						childName [i] = "Klippe";
-					else
-						childName [i] = "Cliff";
-				} else if (i == 2) {
-					if (language == 1)
-						childName [i] = "Falle";
-					else
-						childName [i] = "Trap";
-				} else if (i == 3) {
-					if (language == 1)
-						childName [i] = "Fluss";
-					else
-						childName [i] = "River";
-				} else if (i == 4) {
-					if (language == 1)
-						childName [i] = "Fels";
-					else
-						childName [i] = "Rock";
-				} else {
-					if (language == 1)
-						childName [5] = "Mauer";
-					else
-						childName [5] = "Wall";
-				}
-				typ = "obstacle";
 			} else {
 				if (language == 1)
 					childName [i] = "Knoten" + i;
@@ -277,8 +244,6 @@ public class ScrollMenu : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 			PlayerPrefs.SetString ("itemName", childName [currentPage]);
 		} else if (typ == "opponent") {
 			PlayerPrefs.SetString ("opponentName", childName [currentPage]);
-		} else if (typ == "obstacle") {
-			PlayerPrefs.SetString ("obstacleName", childName [currentPage]);
 		} else {	//background
 			PlayerPrefs.SetString ("backgroundName", childName [currentPage]);
 		}

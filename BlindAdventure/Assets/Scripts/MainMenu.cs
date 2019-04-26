@@ -126,7 +126,7 @@ public class MainMenu : MonoBehaviour {
 	//Navigates to the Scene "CreateLevelScene" if previous level exists or level 1
 	public void onCreateLevelButtonClick(int levelIndex) {
 		if (swiped == false) {
-			Handheld.Vibrate ();
+            Handheld.Vibrate ();
 			PlayerPrefs.SetInt ("LevelNumber", levelIndex); //Sets the levelNumber to the player preferences
 			if (levelIndex != 1) {  
 				int levelIndexPrevious = levelIndex - 1;

@@ -22,7 +22,7 @@
 		<StartGameMenuExplanation>Here you can choose a level that you want to play. You can swipe left or right to choose one of them. You can only play level 2 after you have finished level 1! After you have chosen a level press on the screen! If you swipe up you switch back to the main menu.</StartGameMenuExplanation>
 		<PlayLevelMenuPlayLevel>Welcome to Level!</PlayLevelMenuPlayLevel>
 		<PlayLevelMenuPlayNodeLevelEnd>Here is the level over. The following items you are still missing to complete the level.</PlayLevelMenuPlayNodeLevelEnd>
-		<PlayLevelMenuPlayNodeItemCollect>Here is an!</PlayLevelMenuPlayNodeItemCollect>
+		<PlayLevelMenuPlayNodeItemCollect>You got the following item!</PlayLevelMenuPlayNodeItemCollect>
 		<PlayLevelMenuPlayNodeItemCollect2>Here is a!</PlayLevelMenuPlayNodeItemCollect2>
 		<PlayLevelMenuPlayNodeItemCollect3>. I will take that with me, maybe I need it later.</PlayLevelMenuPlayNodeItemCollect3>
 		<PlayLevelMenuPlayNodeAgain>I have been here once before and found an item.</PlayLevelMenuPlayNodeAgain>
@@ -44,9 +44,9 @@
 		<PlayLevelMenuFightOpponent7>To play the minigame again press the upper half otherwise the lower half.</PlayLevelMenuFightOpponent7>
 		<PlayLevelMenuFightOpponent8>Unfortunately lost. </PlayLevelMenuFightOpponent8>
 		<PlayLevelMenuWaitToSteeplechase>Here is a steeplechase to complete. Swipe in one direction to avoid running into the obstacle.</PlayLevelMenuWaitToSteeplechase>
-		<PlayLevelMenuWaitToObstacle>Attention left</PlayLevelMenuWaitToObstacle>
-		<PlayLevelMenuWaitToObstacle2>Attention right</PlayLevelMenuWaitToObstacle2>
-		<PlayLevelMenuWaitToObstacle3>Attention in front of you</PlayLevelMenuWaitToObstacle3>
+		<PlayLevelMenuWaitToObstacle>on the left side!</PlayLevelMenuWaitToObstacle>
+		<PlayLevelMenuWaitToObstacle2>on the right side!</PlayLevelMenuWaitToObstacle2>
+		<PlayLevelMenuWaitToObstacle3>immediately in front of you!</PlayLevelMenuWaitToObstacle3>
 		<PlayLevelMenuAvoidObstacle>Unfortunately you ran in.</PlayLevelMenuAvoidObstacle>
 		<PlayLevelMenuAvoidObstacle2>Evaded.</PlayLevelMenuAvoidObstacle2>
 		<PlayLevelMenuAvoidObstacle3>Great, steeplechase completed!</PlayLevelMenuAvoidObstacle3>
@@ -221,7 +221,7 @@
 		<StartGameMenuExplanation>Hier kannst du dir ein Level aussuchen das du spielen möchtest. Du kannst nach links oder rechts wischen um dir eines auszusuchen. Level 2 kannst du erst spielen sobald du Level 1 abgeschlossen hast! Sobald du eines ausgesucht hast drücke auf den Bildschirm! Wenn du nach oben wischt wechselst du zurück ins Hauptmenü.</StartGameMenuExplanation>
 		<PlayLevelMenuPlayLevel>Willkommen zu Level!</PlayLevelMenuPlayLevel>
 		<PlayLevelMenuPlayNodeLevelEnd>Hier ist das Level zu Ende, folgendes fehlt dir noch um das Level abzuschließen.</PlayLevelMenuPlayNodeLevelEnd>
-		<PlayLevelMenuPlayNodeItemCollect>Hier ist eine!</PlayLevelMenuPlayNodeItemCollect>
+		<PlayLevelMenuPlayNodeItemCollect>Du hast folgenden Gegenstand erhalten!</PlayLevelMenuPlayNodeItemCollect>
 		<PlayLevelMenuPlayNodeItemCollect2>Hier ist ein!</PlayLevelMenuPlayNodeItemCollect2>
 		<PlayLevelMenuPlayNodeItemCollect3>. Das werde ich mir mitnehmen vielleicht brauche ich es dann später.</PlayLevelMenuPlayNodeItemCollect3>
 		<PlayLevelMenuPlayNodeAgain>Hier habe ich vorher einen Gegenstand gefunden.</PlayLevelMenuPlayNodeAgain>
@@ -244,9 +244,9 @@
 		<PlayLevelMenuFightOpponent7>Wenn du das Minispiel noch einmal spielen willst drücke auf die obere Hälfte ansonsten auf die untere.</PlayLevelMenuFightOpponent7>
 		<PlayLevelMenuFightOpponent8>Leider verloren. </PlayLevelMenuFightOpponent8>
 		<PlayLevelMenuWaitToSteeplechase>Hier gibt es einen Hindernislauf zu absolvieren. Wische in eine Richtung um nicht in das Hindernis zu laufen.</PlayLevelMenuWaitToSteeplechase>
-		<PlayLevelMenuWaitToObstacle>Achtung links</PlayLevelMenuWaitToObstacle>
-		<PlayLevelMenuWaitToObstacle2>Achtung rechts</PlayLevelMenuWaitToObstacle2>
-		<PlayLevelMenuWaitToObstacle3>Achtung vor dir</PlayLevelMenuWaitToObstacle3>
+		<PlayLevelMenuWaitToObstacle>auf der linken Seite!</PlayLevelMenuWaitToObstacle>
+		<PlayLevelMenuWaitToObstacle2>auf der rechten Seite!</PlayLevelMenuWaitToObstacle2>
+		<PlayLevelMenuWaitToObstacle3>direkt vor dir!</PlayLevelMenuWaitToObstacle3>
 		<PlayLevelMenuAvoidObstacle>Leider hineingelaufen</PlayLevelMenuAvoidObstacle>
 		<PlayLevelMenuAvoidObstacle2>Ausgewichen.</PlayLevelMenuAvoidObstacle2>
 		<PlayLevelMenuAvoidObstacle3>Super, Hindernislauf geschafft!</PlayLevelMenuAvoidObstacle3>

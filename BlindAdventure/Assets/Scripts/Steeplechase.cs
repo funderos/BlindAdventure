@@ -7,13 +7,30 @@ using UnityEngine;
 [System.Serializable]
 public class Steeplechase{
 
-	private List <Obstacle> obstacleList = new List <Obstacle> (); //List to save obstacles
+    private int obstacleNumber = 0;
+    private List<KeyValuePair<int, Obstacle>> obstacleList = new List<KeyValuePair<int, Obstacle>>(); //List to save obstacle number with appropriate object
 
-	public void setList (List <Obstacle> obstacleList) {
-		this.obstacleList = obstacleList;
+    public int getObstacleNumber()
+    {
+        return obstacleNumber;
+    }
+
+    public void setObstacleNumber(int obstacleNumber)
+    {
+        this.obstacleNumber = obstacleNumber;
+    }
+
+    public void setList (List<KeyValuePair<int, Obstacle>> list) {
+		this.obstacleList = list;
 	}
 
-	public List<Obstacle> getList() {
-		return obstacleList;
-	}
+    public List<KeyValuePair<int, Obstacle>> getList()
+    {
+        return obstacleList;
+    }
+
+    public void newObstacle()
+    {
+        obstacleNumber++;
+    }
 }

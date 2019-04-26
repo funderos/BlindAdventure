@@ -27,8 +27,8 @@ public class PlayLevelMenuNetwork : MonoBehaviour {
 	private List<KeyValuePair<int,int>> quizList; //List with the question numbers and the appropriate answers
 	private int currentQuestion; //Current question number
 
-	//Variables to play a steeplechase
-	private List <Obstacle> obstacleList; //List with the obstacles of a fight
+    //Variables to play a steeplechase
+    private List<KeyValuePair<int, Obstacle>> obstacleList; //List with the obstacles of a fight
 	private int obstacleIndex; //Index of the obstacle
 
 	//Variables to play a fight
@@ -318,8 +318,8 @@ public class PlayLevelMenuNetwork : MonoBehaviour {
 				opponentIndex = 0;
 				StartCoroutine (waitToOpponent (opponentList [opponentIndex].getTime ()));
 			} else {
-				obstacleIndex = 0; //minigame is a steeplechase
-				StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
+				obstacleIndex = 1; //minigame is a steeplechase
+				StartCoroutine (waitToObstacle (obstacleList[obstacleIndex].Value.getTime()));
 			}
 		}
 	}
@@ -418,25 +418,42 @@ public class PlayLevelMenuNetwork : MonoBehaviour {
 		}
 		Steeplechase steepleChase = node.getSteeplechase ();
 		obstacleList = steepleChase.getList ();
-		obstacleIndex = 0;
-		StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
+		obstacleIndex = 1;
+		StartCoroutine (waitToObstacle (obstacleList[obstacleIndex].Value.getTime()));
 	}
 		
 	//Waits until the next obstacle appears and outputs where the obstacle come from: left, right or forward 
 	IEnumerator waitToObstacle(int secondsToWait) {
 		yield return new WaitForSeconds (secondsToWait);
-		string obstacleTyp = obstacleList [obstacleIndex].getTyp ();
-		int directionObstacle = obstacleList [obstacleIndex].getDirection ();
-		if (directionObstacle == 1) {  //Obstacle from left
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle") + obstacleTranslation(obstacleTyp), true);
-		}
-		else if (directionObstacle == 3){ //Obstacle from right
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle2") + obstacleTranslation(obstacleTyp), true);
-		}
-		else{ //Obstacle from forward
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuWaitToObstacle3") + obstacleTranslation(obstacleTyp), true);
-		}
-		StartCoroutine (avoidObstacle (directionObstacle));
+        int directionObstacle = obstacleList[obstacleIndex].Value.getDirection();
+        if (File.Exists(Application.persistentDataPath + "/" + searchname + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + obstacleIndex + ".wav"))
+        {
+            if (directionObstacle == 1)
+            {  //Obstacle from left
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle"), true);
+            }
+            else if (directionObstacle == 3)
+            { //Obstacle from right
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle2"), true);
+            }
+            else
+            { //Obstacle from forward
+                TTSManager.Speak(xmlReader.translate("PlayLevelMenuWaitToObstacle3"), true);
+            }
+            while (TTSManager.IsSpeaking())
+            {
+                yield return null;
+            }
+            WWW wav = new WWW("file://" + Application.persistentDataPath + "/" + searchname + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + currentQuestion + ".wav");
+            yield return wav;
+            source.clip = wav.GetAudioClip(false);
+            source.Play();
+            while (source.isPlaying)
+            {
+                yield return null;
+            }
+            StartCoroutine(avoidObstacle(directionObstacle));
+        }		
 	}
 		
 	//Waits for swipe and checks if the obstacle is evaded
@@ -450,7 +467,7 @@ public class PlayLevelMenuNetwork : MonoBehaviour {
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuAvoidObstacle2"), true);
 			obstacleIndex++; //Next obstacle if exists
 			if (obstacleIndex < obstacleList.Count) { //Next obstacle
-				StartCoroutine (waitToObstacle (obstacleList [obstacleIndex].getTime ()));
+				StartCoroutine (waitToObstacle (obstacleList[obstacleIndex].Value.getTime()));
 			} else {
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuAvoidObstacle3"), true);
 				if (node.getNodeSolved() == false) { //Node solved for the first time

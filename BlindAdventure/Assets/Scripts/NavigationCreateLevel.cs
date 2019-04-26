@@ -90,14 +90,6 @@ public class NavigationCreateLevel : MonoBehaviour {
 		else if(position == "ObstacleMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateObstacleMenu"), false);
 			menuPosition = Vector3.left * 8800; //ObstacleMenu
-			if (PlayerPrefs.HasKey ("obstacleName")) {
-				TTSManager.Speak (PlayerPrefs.GetString ("obstacleName"), true); //Gets the current position name in the ObstacleMenu
-			} else {
-				if (PlayerPrefs.GetInt ("Language")==1)
-					TTSManager.Speak ("Baumstumpf", true);
-				else
-					TTSManager.Speak ("Tree Stump", true);
-			}
 		}
 		else if(position == "ExitSteeplechaseMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateExitSteeplechaseMenu"), false);
