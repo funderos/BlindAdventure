@@ -7,7 +7,6 @@ using UnityEngine;
 [System.Serializable]
 public class Node{
 
-	private Item item;
 	private Quiz quiz = null;
 	private Fight fight = null;
 	private Steeplechase steepleChase = null;
@@ -35,14 +34,6 @@ public class Node{
 
 	public Steeplechase getSteeplechase(){
 		return steepleChase;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
-	}
-
-	public Item getItem(){
-		return item;
 	}
 
 	public void setNodeSolved(bool nodeSolved) {

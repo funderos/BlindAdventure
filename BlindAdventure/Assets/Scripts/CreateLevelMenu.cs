@@ -16,7 +16,6 @@ public class CreateLevelMenu : MonoBehaviour
     private int levelNumber;
     private Quiz quiz;
     private Fight fight;
-    private Opponent opponent;
     private Steeplechase steepleChase;
     private Obstacle obstacle;
     private List<Node> nodeList = new List<Node>();
@@ -60,17 +59,15 @@ public class CreateLevelMenu : MonoBehaviour
 
     //Variables to create a fight
     public Button newOpponentButton; //Button for a new opponent in the steeplechase
-    public Button startTimeOpponentButton; //Button to start the time recording 
-    public Button stopTimeOpponentButton; //Button to stop the time recording
-    public Button startRecordingOpponentName; //Button to start recording opponent's name
-    public Button stopRecordingOpponentName; //Button to stop recording opponent's name
-    public Button startRecordingOpponentScream; //Button to start recording opponent's scream
-    public Button stopRecordingOpponentScream; //Button to stop recording opponent's scream
-    private List<Opponent> opponentList; //List with the opponents of a fight
-    public AudioSource dungeon; //Audio dungeon-scream
-    public AudioSource lion; //Audio lion-scream
-    public AudioSource witch; //Audio witch-scream
+    public Button startRecordingOpponentButton; //Button to start recording opponent
+    public Button stopRecordingOpponentButton; //Button to stop recording opponent
     public Button exitFightButton; //Button to exit the fight-minigame
+    private List<KeyValuePair<int, int>> opponentList; //List with the opponent numbers and the appropriate directions
+    public bool scream;
+
+    //Variables to create item
+    public Button startItemNameButton;
+    public Button stopItemNameButton;
 
     //Varibales to swipe
     private Touch startPosition = new Touch(); //Startposition of the swipe
@@ -461,17 +458,6 @@ public class CreateLevelMenu : MonoBehaviour
         }
     }
 
-    //Sets the selected item and navigates to the ExitNodeMenu
-    public void onItemButtonClick(string itemName)
-    {
-        if (swiped == false)
-        {
-            Item item = new Item(itemName);
-            node.setItem(item);
-            menuPositionLevel = navigationLevel.navigateTo("ExitNodeMenu");
-        }
-    }
-
     //Saves the node
     public void onSaveButtonClick()
     {
@@ -497,6 +483,31 @@ public class CreateLevelMenu : MonoBehaviour
         }
     }
 
+    //Starts with the recording of an item name
+    public void onStartItemNameButtonClick()
+    {
+        if (swiped == false)
+        {
+            Handheld.Vibrate();
+            startItemNameButton.gameObject.SetActive(false);
+            stopItemNameButton.gameObject.SetActive(true);
+            voice.recordBegin();
+        }
+    }
+
+    //Stops the recording of an item name, save it and navigates to the MinigameMenu. 
+    public void onStopItemNameButtonClick()
+    {
+        if (swiped == false)
+        {
+            stopItemNameButton.gameObject.SetActive(false);
+            startItemNameButton.gameObject.SetActive(true);
+            voice.recordEnd();
+            voice.saveItemName(levelNumber, nodeIndex);
+            menuPositionLevel = navigationLevel.navigateTo("ExitNodeMenu");
+        }
+    }
+
     //Starts with the recording of a node name
     public void onStartNameButtonClick()
     {
@@ -517,7 +528,7 @@ public class CreateLevelMenu : MonoBehaviour
             stopNameButton.gameObject.SetActive(false);
             startNameButton.gameObject.SetActive(true);
             voice.recordEnd();
-            voice.saveVoice(levelNumber, nodeIndex);
+            voice.saveNodeName(levelNumber, nodeIndex);
             menuPositionLevel = navigationLevel.navigateTo("MinigameMenu");
         }
     }
@@ -530,6 +541,7 @@ public class CreateLevelMenu : MonoBehaviour
             menuPositionLevel = navigationLevel.navigateTo("SteeplechaseMenu");
             steepleChase = new Steeplechase();
             obstacleList = new List<KeyValuePair<int, Obstacle>>();
+            exitSteeplechaseButton.interactable = false;
         }
     }
 
@@ -540,7 +552,8 @@ public class CreateLevelMenu : MonoBehaviour
         {
             menuPositionLevel = navigationLevel.navigateTo("FightMenu");
             fight = new Fight();
-            opponentList = new List<Opponent>();
+            opponentList = new List<KeyValuePair<int, int>>();
+            exitFightButton.interactable = false;
         }
     }
 
@@ -581,7 +594,7 @@ public class CreateLevelMenu : MonoBehaviour
             startQuestionButton.interactable = false;
             voice.recordEnd();
             quiz.newQuestion();
-            voice.saveVoice(levelNumber, nodeIndex, quiz.getQuestionNumber());
+            voice.saveQuestion(levelNumber, nodeIndex, quiz.getQuestionNumber());
             TTSManager.Speak(xmlReader.translate("CreateLevelMenuStopQuestionButton"), false);
             StartCoroutine("answer");
         }
@@ -630,69 +643,53 @@ public class CreateLevelMenu : MonoBehaviour
         }
     }
 
-    //Starts the time recording for an opponent
-    public void onStartTimeOpponentButtonClick()
+    //Sets the opponent count for the fight
+    public void onOpponentCountButtonClick(int count)
     {
         if (swiped == false)
         {
-            Handheld.Vibrate();
-            startTimeOpponentButton.gameObject.SetActive(false);
-            stopTimeOpponentButton.gameObject.SetActive(true);
-            opponent = new Opponent();
-            dateTimeStart1 = DateTime.Now; //Timestamp 1
-        }
-    }
-
-    //Stops the time recording for an opponent and navigates to the OpponentMenu
-    public void onStopTimeOpponentButtonClick()
-    {
-        if (swiped == false)
-        {
-            stopTimeOpponentButton.gameObject.SetActive(false);
-            startTimeOpponentButton.gameObject.SetActive(true);
-            dateTimeStart2 = DateTime.Now; //Timestamp 2
-            TimeSpan timeSpan = dateTimeStart2 - dateTimeStart1; //Difference from timestamp 1 and 2
-            int seconds = timeSpan.Seconds;
-            if (seconds == 0)
-            { //Minimum 1 second
-                seconds = 1;
-            }
-            opponent.setTime(seconds);
+            fight.setOpponentCount(count);
+            scream = false;
             menuPositionLevel = navigationLevel.navigateTo("OpponentMenu");
         }
     }
 
-    //Plays the selected opponent scream
-    public void onOpponentPlayClick(string opponentTyp)
+    //Starts the recording of an opponent and save it
+    public void onStartRecordingOpponentButtonClick()
     {
         if (swiped == false)
         {
             Handheld.Vibrate();
-            if (opponentTyp == "Dungeon")
-            {
-                dungeon.Play();
-            }
-            else if (opponentTyp == "Lion")
-            {
-                lion.Play();
-            }
-            else
-            {
-                witch.Play();
-            }
+            startRecordingOpponentButton.gameObject.SetActive(false);
+            stopRecordingOpponentButton.gameObject.SetActive(true);
+            stopRecordingOpponentButton.interactable = true;
+            startRecordingOpponentButton.interactable = false;
+            voice.recordBegin();
         }
     }
 
-    //Sets the selected opponent typ and navigates to the ExitFightMenu
-    public void onOpponentSelectClick(string opponentTyp)
+    //Stops the recording of an opponent and save it
+    public void onStopRecordingOpponentButtonClick()
     {
         if (swiped == false)
         {
-            opponent.setTyp(opponentTyp);
-            menuPositionLevel = navigationLevel.navigateTo("ExitFightMenu");
-            newOpponentButton.interactable = false;
-            exitFightButton.interactable = false;
-            StartCoroutine("directionOpponent");
+            Handheld.Vibrate();
+            stopRecordingOpponentButton.gameObject.SetActive(false);
+            startRecordingOpponentButton.gameObject.SetActive(true);
+            stopRecordingOpponentButton.interactable = false;
+            startRecordingOpponentButton.interactable = true;
+            voice.recordEnd();
+            if (scream)
+            {
+                menuPositionLevel = navigationLevel.navigateTo("ExitFightMenu");
+                newOpponentButton.interactable = false;
+                exitFightButton.interactable = false;
+                StartCoroutine("directionOpponent");
+            }
+            else
+                fight.newOpponent();
+            voice.saveOpponent(levelNumber, nodeIndex, fight.getOpponentNumber(), scream);
+            scream = !scream;
         }
     }
 
@@ -707,22 +704,21 @@ public class CreateLevelMenu : MonoBehaviour
         Handheld.Vibrate();
         if (direction == 1)
         { //left = 1(a)
-            opponent.setDirection(1);
+            opponentList.Add(new KeyValuePair<int, int>(fight.getOpponentNumber(), 1));
         }
         else if (direction == 2)
         { //up = 2(b)
-            opponent.setDirection(2);
+            opponentList.Add(new KeyValuePair<int, int>(fight.getOpponentNumber(), 2));
         }
         else if (direction == 3)
         { //right = 3(c)
-            opponent.setDirection(3);
+            opponentList.Add(new KeyValuePair<int, int>(fight.getOpponentNumber(), 3));
         }
         else
         {
             StartCoroutine("directionOpponent"); //down = 4, starts IEnumerator again 
             TTSManager.Speak(xmlReader.translate("NavigationCreateLevelNavigateExitFightMenu"), false);
         }
-        opponentList.Add(opponent);
         TTSManager.Speak(xmlReader.translate("CreateLevelMenuDirectionOpponent"), false);
         newOpponentButton.interactable = true;
         exitFightButton.interactable = true;
@@ -733,7 +729,7 @@ public class CreateLevelMenu : MonoBehaviour
     {
         if (swiped == false)
         {
-            menuPositionLevel = navigationLevel.navigateTo("FightMenu");
+            menuPositionLevel = navigationLevel.navigateTo("OpponentMenu");
         }
     }
 
@@ -804,7 +800,7 @@ public class CreateLevelMenu : MonoBehaviour
             startRecordingObstacleButton.interactable = false;
             voice.recordEnd();
             steepleChase.newObstacle();
-            voice.saveVoice(levelNumber, nodeIndex, steepleChase.getObstacleNumber());
+            voice.saveObstacle(levelNumber, nodeIndex, steepleChase.getObstacleNumber());
             menuPositionLevel = navigationLevel.navigateTo("ExitSteeplechaseMenu");
             StartCoroutine("directionObstacle");
         }

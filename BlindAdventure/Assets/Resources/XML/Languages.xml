@@ -8,7 +8,7 @@
 		For example, you name your node with a minigame, knight or magician, who makes this minigame available. As a reward if you win a minigame you will also get an item which you can choose. 
 		It is also important that you will need a headphone for playing the fight to hear from which side the opponent approaches. You can also share your created game with the community or download a game from another user. To close the app swipe right. 
 		</StartMenuGameExplanation>
-		<MainMenuAwake>Main menu! Press the upper half of the screen to create a Level, lower half to play! To share a created game or download a game from another user, swipe left. To close the app swipe right.</MainMenuAwake>
+		<MainMenuAwake>Main menu! Press the upper half of the screen to create a Level, lower half to play! To close the app swipe right.</MainMenuAwake>
 		<MainMenuCreateButton>Levelselection to create a level, swipe for more! Level 1</MainMenuCreateButton>
 		<MainMenuPlayButton>Levelselection to play a level, swipe for more! Level 1</MainMenuPlayButton>
 		<MainMenuWait>Please wait!</MainMenuWait>
@@ -36,9 +36,14 @@
 		<PlayLevelMenuInventoryButton2>You don't have any items.</PlayLevelMenuInventoryButton2>
 		<PlayLevelMenuExitNodeButton>Swipe in one direction to move on.</PlayLevelMenuExitNodeButton>
 		<PlayLevelMenuWaitToFight>Here is a fight to win. Swipe in the direction from which the opponent comes.</PlayLevelMenuWaitToFight>
-		<PlayLevelMenuFightOpponent>Defeated</PlayLevelMenuFightOpponent>
+    <PlayLevelMenuOpponentNameIntroduction>Look out for the</PlayLevelMenuOpponentNameIntroduction>
+    <PlayLevelMenuOpponentDirection1>He always approaches from the left side</PlayLevelMenuOpponentDirection1>
+    <PlayLevelMenuOpponentDirection2>He always approaches from above</PlayLevelMenuOpponentDirection2>
+    <PlayLevelMenuOpponentDirection3>He always approaches from the right side</PlayLevelMenuOpponentDirection3>
+    <PlayLevelMenuOpponentScreamIntroduction>He sounds like this</PlayLevelMenuOpponentScreamIntroduction>
+    <PlayLevelMenuFightOpponent>Defeated</PlayLevelMenuFightOpponent>
 		<PlayLevelMenuFightOpponent2>Great, fight won.</PlayLevelMenuFightOpponent2>
-		<PlayLevelMenuFightOpponent3>As a reward, I got an!</PlayLevelMenuFightOpponent3>
+		<PlayLevelMenuFightOpponent3>As a reward, I got</PlayLevelMenuFightOpponent3>
 		<PlayLevelMenuFightOpponent4>As a reward, I got a!</PlayLevelMenuFightOpponent4>
 		<PlayLevelMenuFightOpponent6>I have already received an item here unfortunately there is nothing left.</PlayLevelMenuFightOpponent6>
 		<PlayLevelMenuFightOpponent7>To play the minigame again press the upper half otherwise the lower half.</PlayLevelMenuFightOpponent7>
@@ -83,15 +88,15 @@
 		<NavigationCreateLevelNavigateBackgroundMenu>First of all choose a background music for the level. Upper half to select a music, lower half to listen, swipe for more.</NavigationCreateLevelNavigateBackgroundMenu>
 		<NavigationCreateLevelNavigateNodeNameMenu>Node Name. Press on the screen to start, a second time to stop recording.</NavigationCreateLevelNavigateNodeNameMenu>
 		<NavigationCreateLevelNavigateMinigameMenu>Choose a minigame, swipe for more. </NavigationCreateLevelNavigateMinigameMenu>
-		<NavigationCreateLevelNavigateItemMenu>Choose an item, swipe for more. </NavigationCreateLevelNavigateItemMenu>
+		<NavigationCreateLevelNavigateItemMenu>Item Name. Press on the screen to start, a second time to stop recording. </NavigationCreateLevelNavigateItemMenu>
 		<NavigationCreateLevelNavigateQuizMenu>Question Recording with three answers. For an example swipe down. Press on the upper half to start, a second time to stop recording.
 		Lower half to finish the quiz if there is at least one question.</NavigationCreateLevelNavigateQuizMenu>
 		<NavigationCreateLevelNavigateExitNodeMenu>End of the node. Lower half to save the current node otherwise it will be discarded. Upper half for new node. If you have finished your node creation swipe right.</NavigationCreateLevelNavigateExitNodeMenu>
-		<NavigationCreateLevelNavigateFightMenu>Time until opponent comes. Press on the screen to start timing, a second time to finish it.</NavigationCreateLevelNavigateFightMenu>
-		<NavigationCreateLevelNavigateOpponentMenu>Choose an opponent. Upper half to select an opponent, lower half to listen, swipe for more.</NavigationCreateLevelNavigateOpponentMenu>
+		<NavigationCreateLevelNavigateFightMenu>Choose how many opponents should appear, swipe for more</NavigationCreateLevelNavigateFightMenu>
+		<NavigationCreateLevelNavigateOpponentMenu>Record the opponent's name and scream, touch the screen to start and stop the recordings.</NavigationCreateLevelNavigateOpponentMenu>
 		<NavigationCreateLevelNavigateExitFightMenu>Where should the enemy comes from? Direction left, right or forward, please swipe in the respective direction.</NavigationCreateLevelNavigateExitFightMenu>
 		<NavigationCreateLevelNavigateSteeplechaseMenu>Time until obstacle comes. Press on the screen to start timing, a second time to finish it.</NavigationCreateLevelNavigateSteeplechaseMenu>
-		<NavigationCreateLevelNavigateObstacleMenu>Choose an obstacle, swipe for more. </NavigationCreateLevelNavigateObstacleMenu>
+		<NavigationCreateLevelNavigateObstacleMenu>Obstacle Name. Press on the screen to start, a second time to stop recording. </NavigationCreateLevelNavigateObstacleMenu>
 		<NavigationCreateLevelNavigateExitSteeplechaseMenu>Where should the obstacle comes from? Direction left, right or forward, please swipe in the respective direction.</NavigationCreateLevelNavigateExitSteeplechaseMenu>
 		<NavigationCreateLevelNavigateEditLevelMenu>Upper half of the screen to edit a node, lower half for a new node.</NavigationCreateLevelNavigateEditLevelMenu>
 		<NavigationCreateLevelNavigateSelectNodeMenu>Choose a node, swipe for more. Node 0 .</NavigationCreateLevelNavigateSelectNodeMenu>
@@ -207,7 +212,7 @@
 									Wichtig ist auch dass man für das Spielen des Kampfes einen Kopfhörer benötigt um hören zu können von welcher Seite sich der Gegner nähert. 
 									Du kannst dein erstelltes Spiel auch teilen oder ein Spiel von einem anderen Nutzer herunterladen.
 									Um die Anwendung zu beenden wische nach rechts.</StartMenuGameExplanation>
-		<MainMenuAwake>Hauptmenü! Drücke auf die obere Hälfte des Bildschirms um ein Level zu erstellen, untere Hälfte zum Spielen! Um ein erstelltes Spiel zu teilen oder ein Spiel von einem anderen Nutzer herunterzuladen, wische nach links. Um die Anwendung zu beenden wische nach rechts.</MainMenuAwake>
+		<MainMenuAwake>Hauptmenü! Drücke auf die obere Hälfte des Bildschirms um ein Level zu erstellen, untere Hälfte zum Spielen! Um die Anwendung zu beenden wische nach rechts.</MainMenuAwake>
 		<MainMenuCreateButton>Levelauswahl für das Erstellen eines Levels, wischen für weitere. Level 1</MainMenuCreateButton>
 		<MainMenuPlayButton>Levelauswahl für das Spielen eines Levels, wischen für Weitere. Level 1</MainMenuPlayButton>
 		<MainMenuWait>Bitte Warten!</MainMenuWait>
@@ -223,7 +228,7 @@
 		<PlayLevelMenuPlayNodeLevelEnd>Hier ist das Level zu Ende, folgendes fehlt dir noch um das Level abzuschließen.</PlayLevelMenuPlayNodeLevelEnd>
 		<PlayLevelMenuPlayNodeItemCollect>Du hast folgenden Gegenstand erhalten!</PlayLevelMenuPlayNodeItemCollect>
 		<PlayLevelMenuPlayNodeItemCollect2>Hier ist ein!</PlayLevelMenuPlayNodeItemCollect2>
-		<PlayLevelMenuPlayNodeItemCollect3>. Das werde ich mir mitnehmen vielleicht brauche ich es dann später.</PlayLevelMenuPlayNodeItemCollect3>
+		<PlayLevelMenuPlayNodeItemCollect3> Das werde ich mir mitnehmen vielleicht brauche ich es dann später.</PlayLevelMenuPlayNodeItemCollect3>
 		<PlayLevelMenuPlayNodeAgain>Hier habe ich vorher einen Gegenstand gefunden.</PlayLevelMenuPlayNodeAgain>
 		<PlayLevelMenuPlayNodeWalk>Wische nach rechts um weiter oder links um zurückzugehen.</PlayLevelMenuPlayNodeWalk>
 		<PlayLevelMenuLoadNodeName>Die Person hat ein Minispiel für dich. Wenn du dieses Minispiel spielen willst dann drücke auf die obere Hälfte ansonsten kannst du in eine Richtung wischen um weiterzugehen.</PlayLevelMenuLoadNodeName>
@@ -235,9 +240,14 @@
 		<PlayLevelMenuInventoryButton2>Du hast noch keine Gegenstände.</PlayLevelMenuInventoryButton2>
 		<PlayLevelMenuExitNodeButton>Wische in eine Richtung um weiterzugehen.</PlayLevelMenuExitNodeButton>
 		<PlayLevelMenuWaitToFight>Hier gibt es einen Kampf zu gewinnen. Wische in die Richtung von der der Gegner kommt.</PlayLevelMenuWaitToFight>
-		<PlayLevelMenuFightOpponent>Besiegt</PlayLevelMenuFightOpponent>
+    <PlayLevelMenuOpponentNameIntroduction>Hier kommt ein</PlayLevelMenuOpponentNameIntroduction>
+    <PlayLevelMenuOpponentDirection1>Er nähert sich stets von der linken Seite</PlayLevelMenuOpponentDirection1>
+    <PlayLevelMenuOpponentDirection2>Er nähert sich stets von oben</PlayLevelMenuOpponentDirection2>
+    <PlayLevelMenuOpponentDirection3>Er nähert sich stets von der rechten Seite</PlayLevelMenuOpponentDirection3>
+    <PlayLevelMenuOpponentScreamIntroduction>So hört er sich an</PlayLevelMenuOpponentScreamIntroduction>
+    <PlayLevelMenuFightOpponent>Besiegt</PlayLevelMenuFightOpponent>
 		<PlayLevelMenuFightOpponent2>Super, Kampf gewonnen.</PlayLevelMenuFightOpponent2>
-		<PlayLevelMenuFightOpponent3>Als Belohnung habe ich auch etwas bekommen. Eine!</PlayLevelMenuFightOpponent3>
+		<PlayLevelMenuFightOpponent3>Als Belohnung habe ich folgendes bekommen</PlayLevelMenuFightOpponent3>
 		<PlayLevelMenuFightOpponent4>Als Belohnung habe ich auch etwas bekommen. Einen!</PlayLevelMenuFightOpponent4>
 		<PlayLevelMenuFightOpponent5>Als Belohnung habe ich auch etwas bekommen. Ein!</PlayLevelMenuFightOpponent5>
 		<PlayLevelMenuFightOpponent6>Hier habe ich schon einmal einen Gegenstand bekommen, jetzt gibt es leider nichts mehr.</PlayLevelMenuFightOpponent6>
@@ -281,17 +291,17 @@
 		<CreateLevelMenuDirectionOpponent>Obere Hälfte für neuen Gegner, untere Hälfte für das Beenden des Kampfes.</CreateLevelMenuDirectionOpponent>
 		<CreateLevelMenuDirectionObstacle>Obere Hälfte für neues Hindernis, untere Hälfte für das Beenden des Hindernislaufes.</CreateLevelMenuDirectionObstacle>
 		<NavigationCreateLevelNavigateBackgroundMenu>Zuerst suche dir eine Hintergrundmusik für das Level aus. Obere Hälfte auswählen, untere anhören, wischen für Weitere.</NavigationCreateLevelNavigateBackgroundMenu>
-		<NavigationCreateLevelNavigateNodeNameMenu>Knoten Name. Drücke auf den Bildschirm um zu starten, ein zweites mal zum Beenden der Aufnahme.</NavigationCreateLevelNavigateNodeNameMenu>
+		<NavigationCreateLevelNavigateNodeNameMenu>Name des Knotens. Drücke auf den Bildschirm, um die Aufnahme zu starten und ein zweites Mal, um sie zu beenden. </NavigationCreateLevelNavigateNodeNameMenu>
 		<NavigationCreateLevelNavigateMinigameMenu>Auswahl des Minispiels, wischen für Weitere.</NavigationCreateLevelNavigateMinigameMenu>
-		<NavigationCreateLevelNavigateItemMenu>Auswahl eines Gegenstandes, wischen für Weitere. </NavigationCreateLevelNavigateItemMenu>
+		<NavigationCreateLevelNavigateItemMenu>Name des Items. Drücke auf den Bildschirm, um die Aufnahme zu starten und ein zweites Mal, um sie zu beenden. </NavigationCreateLevelNavigateItemMenu>
 		<NavigationCreateLevelNavigateQuizMenu>Fragenaufnahme mit 3 Antwortmöglichkeiten. Für ein Beispiel wische nach unten. Drücke auf die obere Hälfte zum Starten, ein zweites mal zum Beenden der Aufnahme. 
 		Untere Hälfte zum Beenden des Rätsels wenn es mindestens eine Frage gibt. </NavigationCreateLevelNavigateQuizMenu>
 		<NavigationCreateLevelNavigateExitNodeMenu>Ende des Knotens. Untere Hälfte zum Speichern des aktuellen Knotens sonst wird er verworfen. Obere Hälfte für neuen Knoten. Wische nach rechts wenn du mit der Erstellung des Knotens fertig bist. </NavigationCreateLevelNavigateExitNodeMenu>
-		<NavigationCreateLevelNavigateFightMenu>Zeit bis Gegner kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, ein zweites mal um sie zu beenden.</NavigationCreateLevelNavigateFightMenu>
-		<NavigationCreateLevelNavigateOpponentMenu>Auswahl des Gegners. Obere Hälfte auswählen, untere anhören, wischen für Weitere. </NavigationCreateLevelNavigateOpponentMenu>
+		<NavigationCreateLevelNavigateFightMenu>Wähle, wie oft Gegner auftauchen solle, wischen für weitere.</NavigationCreateLevelNavigateFightMenu>
+		<NavigationCreateLevelNavigateOpponentMenu>Aufnhemen des Gegnernamens sowie dessen Schrei. Zum Starten und Stoppen jeweils einmal den Bildschirm berühren</NavigationCreateLevelNavigateOpponentMenu>
 		<NavigationCreateLevelNavigateExitFightMenu>Von wo soll der Gegner kommen? Richtung links, rechts oder von vorne, bitte in die jeweilige Richtung wischen.</NavigationCreateLevelNavigateExitFightMenu>
 		<NavigationCreateLevelNavigateSteeplechaseMenu>Zeit bis Hindernis kommt. Drücke auf den Bildschirm um mit der Zeitmessung zu beginnen, ein zweites mal um sie zu beenden.</NavigationCreateLevelNavigateSteeplechaseMenu>
-		<NavigationCreateLevelNavigateObstacleMenu>Auswahl des Hindernis, wischen für Weitere. </NavigationCreateLevelNavigateObstacleMenu>
+		<NavigationCreateLevelNavigateObstacleMenu>Name des Hindernisses. Drücke auf den Bildschirm, um die Aufnahme zu starten und ein zweites Mal, um sie zu beenden. </NavigationCreateLevelNavigateObstacleMenu>
 		<NavigationCreateLevelNavigateExitSteeplechaseMenu>Von wo soll das Hindernis kommen? Richtung links, rechts oder von vorne, bitte in die jeweilige Richtung wischen.</NavigationCreateLevelNavigateExitSteeplechaseMenu>
 		<NavigationCreateLevelNavigateEditLevelMenu>Obere Hälfte des Bilschirms zum Bearbeiten eines Knotens, untere Hälfte für einen neuen Knoten.</NavigationCreateLevelNavigateEditLevelMenu>
 		<NavigationCreateLevelNavigateSelectNodeMenu>Auswahl eines Knotens, wischen für Weitere. Knoten 0 .</NavigationCreateLevelNavigateSelectNodeMenu>

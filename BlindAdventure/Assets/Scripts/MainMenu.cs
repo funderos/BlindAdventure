@@ -94,7 +94,7 @@ public class MainMenu : MonoBehaviour {
 						//Swipe Left
 						if (differenceX > 0 && menuPosition == Vector3.zero) {
 							Handheld.Vibrate ();
-							SceneManager.LoadScene ("NetworkScene"); //Loads scene "NetworkScene"
+							//SceneManager.LoadScene ("NetworkScene"); //Loads scene "NetworkScene"
 						}
 					}
 					swiped = true;

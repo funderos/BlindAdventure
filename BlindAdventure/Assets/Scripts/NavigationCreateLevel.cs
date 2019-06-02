@@ -46,14 +46,6 @@ public class NavigationCreateLevel : MonoBehaviour {
 		else if(position == "ItemMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateItemMenu"), false);
 			menuPosition = Vector3.left * 4000; //ItemMenu
-			if (PlayerPrefs.HasKey ("itemName")) {
-				TTSManager.Speak (PlayerPrefs.GetString ("itemName"), true); //Gets the current position name in the ItemMenu
-			} else {
-				if(PlayerPrefs.GetInt ("Language")==1)
-					TTSManager.Speak ("Buch", true);
-				else
-					TTSManager.Speak ("Book", true);
-			}
 		}
 		else if(position == "QuizMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateQuizMenu"), false);

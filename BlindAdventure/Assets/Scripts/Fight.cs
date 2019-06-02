@@ -7,13 +7,42 @@ using UnityEngine;
 [System.Serializable]
 public class Fight{
 
-	private List <Opponent> opponentList = new List <Opponent> (); //List to save opponents
+    private int opponentCount = 1;
+    private int opponentNumber = 0;
+    List<KeyValuePair<int, int>> opponentList = new List<KeyValuePair<int, int>>(); //List to save the opponent number with the appropriate direction
 
-	public void setList (List <Opponent> opponentList) {
-		this.opponentList = opponentList;
-	}
+    public int getOpponentNumber()
+    {
+        return opponentNumber;
+    }
 
-	public List<Opponent> getList() {
-		return opponentList;
-	}
+    public void setOpponentNumber(int opponentNumber)
+    {
+        this.opponentNumber = opponentNumber;
+    }
+
+    public int getOpponentCount()
+    {
+        return opponentCount;
+    }
+
+    public void setOpponentCount(int opponentNumber)
+    {
+        this.opponentCount = opponentNumber;
+    }
+
+    public List<KeyValuePair<int, int>> getList()
+    {
+        return opponentList;
+    }
+
+    public void setList(List<KeyValuePair<int, int>> list)
+    {
+        this.opponentList = list;
+    }
+
+    public void newOpponent()
+    {
+        opponentNumber++;
+    }
 }

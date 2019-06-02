@@ -152,23 +152,8 @@ public class ScrollMenu : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 						childName [9] = "Rope";
 				}
 				typ = "item";
-			} else if (container.GetChild (0).name == "Dungeon"){
-				if (i == 0) {
-					if (language == 1)
-						childName [i] = "Drache";
-					else
-						childName [i] = "Dungeon";
-				} else if (i == 1) {
-					if (language == 1)
-						childName [i] = "Loewe";
-					else
-						childName [i] = "Lion";
-				} else {
-					if (language == 1)
-						childName [2] = "Hexe";
-					else
-						childName [2] = "Witch";
-				}
+			} else if (container.GetChild (0).name == "OpponentCount_1"){
+                childName[i] = (i + 1).ToString();
 				typ = "opponent";
 			} else {
 				if (language == 1)

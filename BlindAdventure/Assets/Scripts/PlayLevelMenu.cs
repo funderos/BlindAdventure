@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Networking;
 
 //Author: Stadler Viktor
 //This class manages the methods to play a level
@@ -16,7 +17,7 @@ public class PlayLevelMenu : MonoBehaviour {
 	public AudioSource source;
 	public AudioClip clip;
 	public AudioSource applause;
-	public AudioSource walk;
+    public AudioSource walk;
 
 	//Variables to navigate 
 	public NavigationPlayLevel navigationPlay;
@@ -31,13 +32,10 @@ public class PlayLevelMenu : MonoBehaviour {
     private List<KeyValuePair<int, Obstacle>> obstacleList; //List with the obstacles of a fight
     private int obstacleIndex; //Index of the obstacle
 
-	//Variables to play a fight
-	private List <Opponent> opponentList; //List with the opponents of a fight
+    //Variables to play a fight
+    private List<KeyValuePair<int, int>> opponentList; //List with the opponents of a fight
 	private int opponentIndex; //Index of the opponent
 	private int directionOpponent; //Direction where the opponent appears
-	public AudioSource dungeonScream; //Audio dungeon-scream
-	public AudioSource lionScream; //Audio lion-scream
-	public AudioSource witchScream; //Audio witch-scream
 
 	//Variables for the background musics
 	public AudioSource backgroundMusic1;
@@ -139,7 +137,7 @@ public class PlayLevelMenu : MonoBehaviour {
 		}
 	}
 		
-	//Starts the background music and initializes the necessary and collected items lists
+	//Starts the background music
 	public void playLevel() {
 		levelNumber = PlayerPrefs.GetInt ("LevelNumber"); //Gets the current levelNumber from the player preferences
 		TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayLevel") + levelNumber, true);
@@ -185,12 +183,16 @@ public class PlayLevelMenu : MonoBehaviour {
                     }
                     if(File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Item" + ".wav"))
                     {
-                        playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                        StartCoroutine(playAudioItem(i, false));
+                        break;
                     }
                 }
             }
 
-		} else {
+            if(allItemsCollected)
+                StartCoroutine(finishedLevel());
+
+        } else {
 			node = nodeList [nodeIndex];
 			if (node.getQuiz () != null || node.getFight () != null || node.getSteeplechase () != null) { //If its a node with a minigame
 				if (File.Exists (Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + ".wav")) { 
@@ -201,7 +203,7 @@ public class PlayLevelMenu : MonoBehaviour {
 				playNodeButton.interactable = false;
 				if (!node.getNodeSolved() && File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav")) {
 					TTSManager.Speak (xmlReader.translate ("PlayLevelMenuPlayNodeItemCollect"), true);
-                    playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                    StartCoroutine(playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav"));
                     TTSManager.Speak(xmlReader.translate("PlayLevelMenuPlayNodeItemCollect3"), true);
                     node.setNodeSolved(true);
 					LoadSaveGame.saveLevel(level);
@@ -252,6 +254,84 @@ public class PlayLevelMenu : MonoBehaviour {
         }
     }
 
+    IEnumerator playAudioItem(int number, bool type)
+    {
+        node = nodeList[number];
+        if (node.getNodeSolved() == type)
+        {
+            while (TTSManager.IsSpeaking())
+            {
+                yield return null;
+            }
+            UnityWebRequest wav = UnityWebRequestMultimedia.GetAudioClip(
+                "file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + number + "Item" + ".wav", AudioType.WAV);
+            yield return wav.SendWebRequest();
+            if (wav.isNetworkError)
+            {
+                Debug.Log(wav.isNetworkError);
+            }
+            else
+            {
+                source.clip = DownloadHandlerAudioClip.GetContent(wav);
+            }
+            source.Play();
+            while (source.isPlaying)
+            {
+                yield return null;
+            }
+        }
+        if (number < nodeList.Count - 1)
+            yield return StartCoroutine(playAudioItem(++number, type));
+    }
+
+    IEnumerator playAudioOpponents(int ind, bool scream)
+    {
+        string fname = "file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Opponent" + (ind + 1).ToString();
+        UnityWebRequest wav;
+        if (scream)
+        {
+            wav = UnityWebRequestMultimedia.GetAudioClip(fname + "Scream.wav", AudioType.WAV);
+            TTSManager.Speak(xmlReader.translate("PlayLevelMenuOpponentScreamIntroduction"), true);
+        }    
+        else
+        {
+            wav = UnityWebRequestMultimedia.GetAudioClip(fname + "Name.wav", AudioType.WAV);
+            TTSManager.Speak(xmlReader.translate("PlayLevelMenuOpponentNameIntroduction"), true);
+        }
+        while (TTSManager.IsSpeaking())
+        {
+            yield return null;
+        }
+
+        yield return wav.SendWebRequest();
+        if (wav.isNetworkError)
+        {
+            Debug.Log(wav.isNetworkError);
+        }
+        else
+        {
+            source.clip = DownloadHandlerAudioClip.GetContent(wav);
+        }
+        source.Play();
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+        if (scream)
+        {
+            ind++;
+            if (ind < opponentList.Count)
+                yield return StartCoroutine(playAudioOpponents(ind, false));
+            else
+                StartCoroutine(waitToOpponent());
+        }
+        else
+        {
+            TTSManager.Speak(xmlReader.translate("PlayLevelMenuOpponentDirection" + opponentList[ind].Value.ToString()), true);
+            yield return StartCoroutine(playAudioOpponents(ind, true));
+        }
+    }
+
     //Outputs an applause melody and saves the level as completed
     IEnumerator finishedLevel(){
 		level.setLevelCompleted (true);
@@ -289,7 +369,7 @@ public class PlayLevelMenu : MonoBehaviour {
 
 	//Outputs all collected items
 	public void onInventoryButtonClick(){
-		if (swiped == false) {
+        if (swiped == false) {
 			Handheld.Vibrate ();
             bool anyItemsCollected = false;
             for (int i = 0; i < nodeList.Count; i++) //Looks if all items are collected
@@ -297,6 +377,7 @@ public class PlayLevelMenu : MonoBehaviour {
                 node = nodeList[i];
                 if (node.getNodeSolved())
                 {
+                    TTSManager.Speak("Loop Number" + i, false);
                     if (!anyItemsCollected)
                     {
                         TTSManager.Speak(xmlReader.translate("PlayLevelMenuInventoryButton"), false);
@@ -305,7 +386,8 @@ public class PlayLevelMenu : MonoBehaviour {
 
                     if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Item" + ".wav"))
                     {
-                        playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav");
+                        StartCoroutine(playAudioItem(i, true));
+                        break;
                     }
                 }
             }
@@ -325,7 +407,7 @@ public class PlayLevelMenu : MonoBehaviour {
 				StartCoroutine (question());
 			} else if (node.getFight () != null) { //minigame is a fight
 				opponentIndex = 0;
-				StartCoroutine (waitToOpponent (opponentList [opponentIndex].getTime ()));
+				StartCoroutine (waitToFight());
 			} else {
 				obstacleIndex = 0; //minigame is a steeplechase
                 StartCoroutine(waitToObstacle(obstacleList[obstacleIndex].Value.getTime()));
@@ -349,63 +431,33 @@ public class PlayLevelMenu : MonoBehaviour {
 		}
 		Fight fight = node.getFight ();
 		opponentList = fight.getList ();
-		opponentIndex = 0;
-		StartCoroutine (waitToOpponent (opponentList [opponentIndex].getTime ()));
+        opponentIndex = 0;
+        StartCoroutine(playAudioOpponents(0, false));
 	}
 		
 	//Waits until the next opponent appears and outputs a scream from the direction left, right or forward 
-	IEnumerator waitToOpponent(int secondsToWait) {
-		yield return new WaitForSeconds (secondsToWait);
-		string opponentTyp = opponentList [opponentIndex].getTyp ();
-		directionOpponent = opponentList [opponentIndex].getDirection ();
-		if (opponentTyp == "Dungeon") {
-			if (directionOpponent == 1) {
-				dungeonScream.panStereo = -1; //Dungeon-scream from left
-			} else if (directionOpponent == 3) {
-				dungeonScream.panStereo = 1; //Dungeon-scream from right
-			} else {
-				dungeonScream.panStereo = 0 ; //Dungeon-scream from forward
-			}
-			dungeonScream.Play ();
-		} else if (opponentTyp == "Lion") {
-			if (directionOpponent == 1) {
-				lionScream.panStereo = -1; //Lion-scream from left
-			} else if (directionOpponent == 3) {
-				lionScream.panStereo = 1; //Lion-scream from right
-			} else {
-				lionScream.panStereo = 0 ; //Lion-scream from forward
-			}
-			lionScream.Play ();
-		} else {
-			if (directionOpponent == 1) {
-				witchScream.panStereo = -1; //Witch-scream from left
-			} else if (directionOpponent == 3) {
-				witchScream.panStereo = 1; //Witch-scream from right
-			} else {
-				witchScream.panStereo = 0 ; //Witch-scream from forward
-			}
-			witchScream.Play ();
-		}
-		StartCoroutine (fightOpponent (opponentTyp));
+	IEnumerator waitToOpponent() {
+		yield return new WaitForSeconds (5);
+        int index = Random.Range(0, opponentList.Count);
+        StartCoroutine(playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Opponent" + (index + 1).ToString() + "Scream.wav"));
+		StartCoroutine (fightOpponent (index));
 	}
 
 	//Waits for swipe and checks if the opponent is defeated
-	IEnumerator fightOpponent(string opponentTyp) {
+	IEnumerator fightOpponent(int index) {
 		direction = 0;
-		yield return new WaitForSeconds (2); //2 seconds time to react on the scream
+		yield return new WaitForSeconds (5); //2 seconds time to react on the scream
 
-		if (directionOpponent == direction) { //opponent defeated
+		if (opponentList[index].Value == direction) { //opponent defeated
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent"), true);
 			opponentIndex++; //Next opponent if exists
-			if (opponentIndex < opponentList.Count) { //Next opponent
-				StartCoroutine (waitToOpponent (opponentList [opponentIndex].getTime ()));
+			if (opponentIndex < node.getFight().getOpponentCount()) { //Next opponent
+				StartCoroutine (waitToOpponent ());
 			} else { //Fight won
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent2"), true);
 				if (node.getNodeSolved () == false) { //Node solved for the first time
-					Item item = node.getItem ();
-					collectedItems.Add (item); //New item collected
-					itemOutput(item);
-					node.setNodeSolved (true);
+                    yield return StartCoroutine(itemOutput());
+                    node.setNodeSolved (true);
 					LoadSaveGame.saveLevel (level);
 				} else {
 					TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent6"), true); //Item already collected
@@ -437,9 +489,9 @@ public class PlayLevelMenu : MonoBehaviour {
         yield return new WaitForSeconds(secondsToWait);
         int directionObstacle = obstacleList[obstacleIndex].Value.getDirection();
         int obstacleNumber = obstacleIndex + 1;
-        if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + obstacleNumber + ".wav"))
+        if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Obstacle" + obstacleNumber + ".wav"))
         {
-            WWW wav = new WWW("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + obstacleNumber + ".wav");
+            WWW wav = new WWW("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Obstacle" + obstacleNumber + ".wav");
             yield return wav;
             source.clip = wav.GetAudioClip(false);
             source.Play();
@@ -483,10 +535,8 @@ public class PlayLevelMenu : MonoBehaviour {
             } else {
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuAvoidObstacle3"), true);
 				if (node.getNodeSolved() == false) { //Node solved for the first time
-					Item item = node.getItem ();
-					collectedItems.Add (item);
-					itemOutput(item);
-					node.setNodeSolved(true);
+                    yield return StartCoroutine(itemOutput());
+                    node.setNodeSolved(true);
 					LoadSaveGame.saveLevel(level);
 				}
 				else {
@@ -535,9 +585,7 @@ public class PlayLevelMenu : MonoBehaviour {
 			} else { //Quiz successfully completed
 				TTSManager.Speak (xmlReader.translate ("PlayLevelMenuSolutionQuestion3"), true);
 				if (node.getNodeSolved() == false) { //Node solved for the first time
-					Item item = node.getItem ();
-					collectedItems.Add (item); //New item collected
-					itemOutput(item);
+					yield return StartCoroutine(itemOutput());
 					node.setNodeSolved (true);
 					LoadSaveGame.saveLevel(level);
 				} else {
@@ -582,14 +630,14 @@ public class PlayLevelMenu : MonoBehaviour {
 	}
 
 	//Outputs when an item is collected, depends on the correct article (a,an,eine,ein) from the item
-	public void itemOutput(Item item){
-		if (((item.getName () == "Candle" || item.getName () == "Clock") && language == 1) || item.getName () == "Umbrella" && language == 0) { //Article "eine" or "an"
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent3") + itemTranslation (item.getName ()), true);
-		} else if ((item.getName () == "Rope" || item.getName () == "Book" || item.getName () == "Knife") && language == 1){ //Article "ein"
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent5") + itemTranslation (item.getName ()), true);
-		} else {
-			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent4") + itemTranslation (item.getName ()), true); //Article "einen" or "a"
-		} 
+	public IEnumerator itemOutput(){
+        TTSManager.Speak(xmlReader.translate("PlayLevelMenuFightOpponent3"), true);
+        if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav"))
+        {
+            yield return StartCoroutine(playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Item" + ".wav"));
+        }
+        else
+            yield return null;
 	}
 
 	//Translation for the itemNames

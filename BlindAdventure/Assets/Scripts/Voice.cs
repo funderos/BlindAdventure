@@ -27,7 +27,7 @@ public class Voice : MonoBehaviour {
 	}
 
 	//Saves a node name
-	public void saveVoice(int levelNumber, int nodeNumber) {
+	public void saveNodeName(int levelNumber, int nodeNumber) {
 		trim ();
 		string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber;
 		if(!filename.ToLower().EndsWith(".wav")){
@@ -36,8 +36,19 @@ public class Voice : MonoBehaviour {
 		settings (filename);
 	}
 
-	//Saves a question
-	public void saveVoice(int levelNumber, int nodeNumber, int questionNumber) {
+    public void saveItemName(int levelNumber, int nodeNumber)
+    {
+        trim();
+        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Item";
+        if (!filename.ToLower().EndsWith(".wav"))
+        {
+            filename += ".wav";
+        }
+        settings(filename);
+    }
+
+    //Saves a question
+    public void saveQuestion(int levelNumber, int nodeNumber, int questionNumber) {
 		trim ();
 		string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Question" + questionNumber;
 		if(!filename.ToLower().EndsWith(".wav")){
@@ -46,9 +57,37 @@ public class Voice : MonoBehaviour {
 		settings (filename);
 	}
 
-	//Trims the silence 
-	//Was created with the assistance of https://docs.unity3d.com/ScriptReference/AudioSource.SetScheduledEndTime.html and the contained URL: https://gist.github.com/darktable/2317063 
-	public void trim(){
+    //Saves an obstacle
+    public void saveObstacle(int levelNumber, int nodeNumber, int obstacleNumber)
+    {
+        trim();
+        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Obstacle" + obstacleNumber;
+        if (!filename.ToLower().EndsWith(".wav"))
+        {
+            filename += ".wav";
+        }
+        settings(filename);
+    }
+
+    //Saves an opponent
+    public void saveOpponent(int levelNumber, int nodeNumber, int opponentNumber, bool scream)
+    {
+        trim();
+        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Opponent" + opponentNumber;
+        if (scream)
+            filename += "Scream";
+        else
+            filename += "Name";
+        if (!filename.ToLower().EndsWith(".wav"))
+        {
+            filename += ".wav";
+        }
+        settings(filename);
+    }
+
+    //Trims the silence 
+    //Was created with the assistance of https://docs.unity3d.com/ScriptReference/AudioSource.SetScheduledEndTime.html and the contained URL: https://gist.github.com/darktable/2317063 
+    public void trim(){
 		int channels = audioSource.clip.channels;
 		int hz = audioSource.clip.frequency;
 		float[] samples = new float[audioSource.clip.samples];
