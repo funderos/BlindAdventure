@@ -757,7 +757,7 @@ public class CreateLevelMenu : MonoBehaviour
         }
     }
 
-    //Stops the time recording for an opponent and navigates to the ObstacleMenu
+    //Stops the time recording for an obstacle and navigates to the ObstacleMenu
     public void onStopTimeObstacleButtonClick()
     {
         if (swiped == false)
@@ -784,6 +784,8 @@ public class CreateLevelMenu : MonoBehaviour
             Handheld.Vibrate();
             startRecordingObstacleButton.gameObject.SetActive(false);
             stopRecordingObstacleButton.gameObject.SetActive(true);
+            startRecordingObstacleButton.interactable = false;
+            stopRecordingObstacleButton.interactable = true;
             voice.recordBegin();
         }
     }
@@ -797,7 +799,7 @@ public class CreateLevelMenu : MonoBehaviour
             stopRecordingObstacleButton.gameObject.SetActive(false);
             startRecordingObstacleButton.gameObject.SetActive(true);
             stopRecordingObstacleButton.interactable = false;
-            startRecordingObstacleButton.interactable = false;
+            startRecordingObstacleButton.interactable = true;
             voice.recordEnd();
             steepleChase.newObstacle();
             voice.saveObstacle(levelNumber, nodeIndex, steepleChase.getObstacleNumber());

@@ -41,6 +41,7 @@
     <PlayLevelMenuOpponentDirection2>He always approaches from above</PlayLevelMenuOpponentDirection2>
     <PlayLevelMenuOpponentDirection3>He always approaches from the right side</PlayLevelMenuOpponentDirection3>
     <PlayLevelMenuOpponentScreamIntroduction>He sounds like this</PlayLevelMenuOpponentScreamIntroduction>
+    <PlayLevelMenuRepeatOpponentIntroduction>Swipe left to repeat the opponent Introduction, right to start the game.</PlayLevelMenuRepeatOpponentIntroduction>
     <PlayLevelMenuFightOpponent>Defeated</PlayLevelMenuFightOpponent>
 		<PlayLevelMenuFightOpponent2>Great, fight won.</PlayLevelMenuFightOpponent2>
 		<PlayLevelMenuFightOpponent3>As a reward, I got</PlayLevelMenuFightOpponent3>
@@ -245,6 +246,7 @@
     <PlayLevelMenuOpponentDirection2>Er nähert sich stets von oben</PlayLevelMenuOpponentDirection2>
     <PlayLevelMenuOpponentDirection3>Er nähert sich stets von der rechten Seite</PlayLevelMenuOpponentDirection3>
     <PlayLevelMenuOpponentScreamIntroduction>So hört er sich an</PlayLevelMenuOpponentScreamIntroduction>
+    <PlayLevelMenuRepeatOpponentIntroduction>Wische nach links, um die Vorstellung der Gegner zu wiederholen oder nach rechts, umd das Spiel zu starten.</PlayLevelMenuRepeatOpponentIntroduction>
     <PlayLevelMenuFightOpponent>Besiegt</PlayLevelMenuFightOpponent>
 		<PlayLevelMenuFightOpponent2>Super, Kampf gewonnen.</PlayLevelMenuFightOpponent2>
 		<PlayLevelMenuFightOpponent3>Als Belohnung habe ich folgendes bekommen</PlayLevelMenuFightOpponent3>

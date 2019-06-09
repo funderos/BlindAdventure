@@ -323,7 +323,7 @@ public class PlayLevelMenu : MonoBehaviour {
             if (ind < opponentList.Count)
                 yield return StartCoroutine(playAudioOpponents(ind, false));
             else
-                StartCoroutine(waitToOpponent());
+                StartCoroutine(waitToRepeat());
         }
         else
         {
@@ -434,10 +434,25 @@ public class PlayLevelMenu : MonoBehaviour {
         opponentIndex = 0;
         StartCoroutine(playAudioOpponents(0, false));
 	}
-		
-	//Waits until the next opponent appears and outputs a scream from the direction left, right or forward 
-	IEnumerator waitToOpponent() {
-		yield return new WaitForSeconds (5);
+
+    //Asks if Player wants to repeat the opponent introduction 
+    IEnumerator waitToRepeat()
+    {
+        direction = 0;
+        TTSManager.Speak(xmlReader.translate("PlayLevelMenuRepeatOpponentIntroduction"), true);
+        while (direction == 0 || direction == 2 || direction == 4)
+        {
+            yield return null;
+        }
+        if (direction == 1)
+            StartCoroutine(playAudioOpponents(0, false));
+        if (direction == 3)
+            StartCoroutine(waitToOpponent());
+    }
+
+    //Waits until the next opponent appears and outputs a scream from the direction left, right or forward 
+    IEnumerator waitToOpponent() {
+		yield return new WaitForSeconds (2);
         int index = Random.Range(0, opponentList.Count);
         StartCoroutine(playAudio("file://" + Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Opponent" + (index + 1).ToString() + "Scream.wav"));
 		StartCoroutine (fightOpponent (index));
@@ -446,7 +461,7 @@ public class PlayLevelMenu : MonoBehaviour {
 	//Waits for swipe and checks if the opponent is defeated
 	IEnumerator fightOpponent(int index) {
 		direction = 0;
-		yield return new WaitForSeconds (5); //2 seconds time to react on the scream
+		yield return new WaitForSeconds (5); //5 seconds time to react on the scream
 
 		if (opponentList[index].Value == direction) { //opponent defeated
 			TTSManager.Speak (xmlReader.translate ("PlayLevelMenuFightOpponent"), true);
