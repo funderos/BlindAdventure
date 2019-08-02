@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PlayLevelScene.unity
+- path: Assets/NetworkScene.unity
   isLoaded: 1
   isActive: 1

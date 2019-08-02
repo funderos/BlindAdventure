@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	IEnumerator outputAwake() {
-		TTSManager.Initialize (transform.name, "OnTTSInit"); //Initializes the Text-to-Speech Plugin
+		//TTSManager.Initialize (transform.name, "OnTTSInit"); //Initializes the Text-to-Speech Plugin
 		while(!TTSManager.IsInitialized()){
 			yield return null;
 		}
@@ -94,7 +94,7 @@ public class MainMenu : MonoBehaviour {
 						//Swipe Left
 						if (differenceX > 0 && menuPosition == Vector3.zero) {
 							Handheld.Vibrate ();
-							//SceneManager.LoadScene ("NetworkScene"); //Loads scene "NetworkScene"
+							SceneManager.LoadScene ("NetworkScene"); //Loads scene "NetworkScene"
 						}
 					}
 					swiped = true;
@@ -130,7 +130,7 @@ public class MainMenu : MonoBehaviour {
 			PlayerPrefs.SetInt ("LevelNumber", levelIndex); //Sets the levelNumber to the player preferences
 			if (levelIndex != 1) {  
 				int levelIndexPrevious = levelIndex - 1;
-				if (File.Exists (Application.persistentDataPath + "/Level_" + levelIndexPrevious + ".txt")) { //Navigates to the Scene "CreateLevelScene", because previous level exists
+				if (File.Exists (Application.persistentDataPath + "/CurrentGame/Level_" + levelIndexPrevious + ".txt")) { //Navigates to the Scene "CreateLevelScene", because previous level exists
 					PlayerPrefs.SetInt ("LevelNumber", levelIndex);
 					SceneManager.LoadScene("CreateLevelScene");
 					TTSManager.Speak (xmlReader.translate ("MainMenuWait"), false);
@@ -148,11 +148,11 @@ public class MainMenu : MonoBehaviour {
 	public void onPlayLevelButtonClick(int levelIndex) {
 		if (swiped == false) {
 			Handheld.Vibrate ();
-			if (File.Exists (Application.persistentDataPath + "/Level_" + levelIndex + ".txt")) { //Level exist
+			if (File.Exists (Application.persistentDataPath + "/CurrentGame/Level_" + levelIndex + ".txt")) { //Level exist
 				if (levelIndex != 1) {  
 					PlayerPrefs.SetInt ("LevelNumber", levelIndex - 1);
 					int previousLevelNumber = levelIndex - 1;
-					if (File.Exists (Application.persistentDataPath + "/Level_" + previousLevelNumber + ".txt")) {
+					if (File.Exists (Application.persistentDataPath + "/CurrentGame/Level_" + previousLevelNumber + ".txt")) {
 						Level level = LoadSaveGame.loadLevel ();
 						if (level.getLevelCompleted () == true) { //if previous level successfully completed; Navigates to the Scene "PlayLevelScene", because level exists and previous level successfully completed
 							PlayerPrefs.SetInt ("LevelNumber", levelIndex);

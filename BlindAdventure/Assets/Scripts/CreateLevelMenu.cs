@@ -93,7 +93,7 @@ public class CreateLevelMenu : MonoBehaviour
     {
         StartCoroutine(outputAwake());
         levelNumber = PlayerPrefs.GetInt("LevelNumber"); //Gets the current levelNumber from the player preferences
-        if (File.Exists(Application.persistentDataPath + "/Level_" + levelNumber + ".txt"))
+        if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"))
         {  //If the level exists, it will be loaded. Otherwise a new one will be created.
             level = LoadSaveGame.loadLevel();
             nodeList = level.getList();
@@ -120,7 +120,7 @@ public class CreateLevelMenu : MonoBehaviour
 
     IEnumerator outputAwake()
     {
-        TTSManager.Initialize(transform.name, "OnTTSInit"); //Initializes the Text-to-Speech Plugin
+        //TTSManager.Initialize(transform.name, "OnTTSInit"); //Initializes the Text-to-Speech Plugin
         while (!TTSManager.IsInitialized())
         {
             yield return null;
@@ -141,7 +141,7 @@ public class CreateLevelMenu : MonoBehaviour
 
     void Start()
     {
-        if (File.Exists(Application.persistentDataPath + "/Level_" + levelNumber + ".txt"))
+        if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"))
         {  //Inits the Scroll Rect in the SelectNodeMenu to change a node (if level exists)
             nodeList = level.getList();
             for (int i = 0; i < nodeList.Count; i++)
@@ -264,9 +264,9 @@ public class CreateLevelMenu : MonoBehaviour
                 if (menuPositionLevel == Vector3.left * 10400 && saveNodeButton == true)
                 { //If the minigame isn't saved and the NewNodeButton from the ExitNodeMenu, delete created questions
                     int k = 1;
-                    while (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + k + ".wav"))
+                    while (File.Exists(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + k + ".wav"))
                     {
-                        File.Delete(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + k + ".wav");
+                        File.Delete(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeIndex + "Question" + k + ".wav");
                         k++;
                     }
                 }
@@ -274,7 +274,7 @@ public class CreateLevelMenu : MonoBehaviour
                 nodeList = level.getList();
                 node = new Node();
                 nodeIndex = nodeList.Count;
-                if (File.Exists(Application.persistentDataPath + "/Level_" + levelNumber + ".txt"))
+                if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"))
                 {
                     TTSManager.Speak(xmlReader.translate("CreateLevelMenuNewNodeButton") + nodeList.Count + xmlReader.translate("CreateLevelMenuNewNodeButton2"), false);
                     menuPositionLevel = navigationLevel.navigateTo("CreateNodeMenu");
@@ -341,10 +341,10 @@ public class CreateLevelMenu : MonoBehaviour
                 for (int i = nodeIndex + 1; i < nodeList.Count; i++)
                 {
                     int k = i - 1;
-                    if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + ".wav"))
+                    if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + i + ".wav"))
                     {
-                        File.Move(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + ".wav",
-                            Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + k + ".wav");
+                        File.Move(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + i + ".wav",
+                            Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + k + ".wav");
                     }
                     Node nodeTemp = nodeList[i];
                     if (nodeTemp.getQuiz() != null)
@@ -352,10 +352,10 @@ public class CreateLevelMenu : MonoBehaviour
                         int questionCount = nodeTemp.getQuiz().getList().Count;
                         for (int j = 0; j <= questionCount; j++)
                         {
-                            if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Question" + j + ".wav"))
+                            if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + i + "Question" + j + ".wav"))
                             {
-                                File.Move(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + i + "Question" + j + ".wav",
-                                    Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + k + "Question" + j + ".wav");
+                                File.Move(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + i + "Question" + j + ".wav",
+                                    Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + k + "Question" + j + ".wav");
                             }
                         }
                     }
@@ -366,7 +366,7 @@ public class CreateLevelMenu : MonoBehaviour
             //If there is no node left, remove whole level. Otherwise the new list with nodes will be saved.
             if (nodeList.Count == 0)
             {
-                File.Delete(Application.persistentDataPath + "/Level_" + levelNumber + ".txt");
+                File.Delete(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt");
             }
             else
             {
@@ -500,6 +500,7 @@ public class CreateLevelMenu : MonoBehaviour
     {
         if (swiped == false)
         {
+            Handheld.Vibrate();
             stopItemNameButton.gameObject.SetActive(false);
             startItemNameButton.gameObject.SetActive(true);
             voice.recordEnd();
@@ -880,9 +881,9 @@ public class CreateLevelMenu : MonoBehaviour
                     deleteQuestions(node, j);
                 }
             }
-            if (File.Exists(Application.persistentDataPath + "/Level_" + levelNumber + ".txt"))
+            if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"))
             {
-                File.Delete(Application.persistentDataPath + "/Level_" + levelNumber + ".txt"); //Deletes level
+                File.Delete(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"); //Deletes level
             }
             deleteLevelButton = false;
             TTSManager.Speak(xmlReader.translate("CreateLevelMenuYesButton"), false);
@@ -908,9 +909,9 @@ public class CreateLevelMenu : MonoBehaviour
         int questionCount = node.getQuiz().getList().Count;
         for (int k = 0; k <= questionCount; k++)
         {
-            if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + index + "Question" + k + ".wav"))
+            if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + index + "Question" + k + ".wav"))
             {
-                File.Delete(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + index + "Question" + k + ".wav");
+                File.Delete(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + index + "Question" + k + ".wav");
             }
         }
     }
@@ -918,9 +919,9 @@ public class CreateLevelMenu : MonoBehaviour
     //Deletes the recorded name of the node 
     public void deleteNodeName(int index)
     {
-        if (File.Exists(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + index + ".wav"))
+        if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + index + ".wav"))
         {
-            File.Delete(Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + index + ".wav");
+            File.Delete(Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + index + ".wav");
         }
     }
 }

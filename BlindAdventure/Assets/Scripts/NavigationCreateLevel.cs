@@ -13,7 +13,8 @@ public class NavigationCreateLevel : MonoBehaviour {
 
 	//Returns the new Vector3 position and gives an audio output which new functions are possible. Depends on which Button was pressed.
 	public Vector3 navigateTo (string position) {
-		Handheld.Vibrate ();
+		Handheld.Vibrate();
+        TTSManager.Stop();
 		if(position == "BackgroundMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateBackgroundMenu"), false);
 			menuPosition = Vector3.left * 800; //BackgroundMenu
@@ -62,14 +63,6 @@ public class NavigationCreateLevel : MonoBehaviour {
 		else if(position == "OpponentMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateOpponentMenu"), false);
 			menuPosition = Vector3.left * 6400; //OpponentMenu
-			if (PlayerPrefs.HasKey ("opponentName")) {
-				TTSManager.Speak (PlayerPrefs.GetString ("opponentName"), true); //Gets the current position name in the OpponentMenu
-			} else {
-				if (PlayerPrefs.GetInt ("Language")==1)
-					TTSManager.Speak ("Drache", true);
-				else
-					TTSManager.Speak ("Dungeon", true);
-			}
 		}
 		else if(position == "ExitFightMenu") {
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelNavigateExitFightMenu"), false);
@@ -108,6 +101,7 @@ public class NavigationCreateLevel : MonoBehaviour {
 	//Returns the new Vector3 position and gives an audio output which new functions are possible. Depends on which vector3 position the swipe-up was.
 	public Vector3 swipeUp (Vector3 menuPosition) {
 		Handheld.Vibrate ();
+        TTSManager.Stop();
 		if (menuPosition == Vector3.left * 800) { //BackgroundMenu
 			SceneManager.LoadScene("CreateLevelScene"); //Loads scene "CreateLevelScene"  
 		} else if (menuPosition == Vector3.left * 1600) { //CreateNodeMenu
@@ -195,6 +189,7 @@ public class NavigationCreateLevel : MonoBehaviour {
 	//Gives an audio output which current functions are possible. Depends on which vector3 position the swipe-down was.
 	public void swipeDown (Vector3 menuPosition) {
 		Handheld.Vibrate ();
+        TTSManager.Stop();
 		if (menuPosition == Vector3.zero) { //LevelOptionMenu
 			TTSManager.Speak (xmlReader.translate ("NavigationCreateLevelLevelOptionMenuExplanation"), false);
 		}
@@ -298,8 +293,8 @@ public class NavigationCreateLevel : MonoBehaviour {
 	public void deleteQuestions() {
 		int levelNumber = PlayerPrefs.GetInt ("LevelNumber");
 		int k = 1;
-		while(File.Exists (Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + CreateLevelMenu.nodeIndex + "Question" + k + ".wav")) {
-			File.Delete (Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + CreateLevelMenu.nodeIndex + "Question" + k + ".wav");
+		while(File.Exists (Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + CreateLevelMenu.nodeIndex + "Question" + k + ".wav")) {
+			File.Delete (Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + CreateLevelMenu.nodeIndex + "Question" + k + ".wav");
 			k++;
 		}
 	}

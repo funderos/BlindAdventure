@@ -15,6 +15,7 @@ public class Voice : MonoBehaviour {
 	}
 
 	public void recordBegin() {
+        TTSManager.Stop();
 		audioSource.clip = Microphone.Start (null,true,30,44100); //(deviceName, loop, length in sec, frequency)
 	}
 
@@ -29,17 +30,33 @@ public class Voice : MonoBehaviour {
 	//Saves a node name
 	public void saveNodeName(int levelNumber, int nodeNumber) {
 		trim ();
-		string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber;
+		string filename = Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeNumber;
 		if(!filename.ToLower().EndsWith(".wav")){
 			filename += ".wav";
 		}
 		settings (filename);
 	}
 
+    //Saves a game name
+    public void saveGameName()
+    {
+        trim();
+        if (!PlayerPrefs.HasKey("GameID"))
+        {
+            LoadSaveGame.createUUID();
+        }
+        string filename = Application.persistentDataPath + "/SavedGames/" + PlayerPrefs.GetString("GameID");
+        if (!filename.ToLower().EndsWith(".wav"))
+        {
+            filename += ".wav";
+        }
+        settings(filename);
+    }
+
     public void saveItemName(int levelNumber, int nodeNumber)
     {
         trim();
-        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Item";
+        string filename = Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeNumber + "Item";
         if (!filename.ToLower().EndsWith(".wav"))
         {
             filename += ".wav";
@@ -50,7 +67,7 @@ public class Voice : MonoBehaviour {
     //Saves a question
     public void saveQuestion(int levelNumber, int nodeNumber, int questionNumber) {
 		trim ();
-		string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Question" + questionNumber;
+		string filename = Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeNumber + "Question" + questionNumber;
 		if(!filename.ToLower().EndsWith(".wav")){
 			filename += ".wav";
 		}
@@ -61,7 +78,7 @@ public class Voice : MonoBehaviour {
     public void saveObstacle(int levelNumber, int nodeNumber, int obstacleNumber)
     {
         trim();
-        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Obstacle" + obstacleNumber;
+        string filename = Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeNumber + "Obstacle" + obstacleNumber;
         if (!filename.ToLower().EndsWith(".wav"))
         {
             filename += ".wav";
@@ -73,7 +90,7 @@ public class Voice : MonoBehaviour {
     public void saveOpponent(int levelNumber, int nodeNumber, int opponentNumber, bool scream)
     {
         trim();
-        string filename = Application.persistentDataPath + "/Level" + levelNumber + "NodeNumber" + nodeNumber + "Opponent" + opponentNumber;
+        string filename = Application.persistentDataPath + "/CurrentGame/Level" + levelNumber + "NodeNumber" + nodeNumber + "Opponent" + opponentNumber;
         if (scream)
             filename += "Scream";
         else

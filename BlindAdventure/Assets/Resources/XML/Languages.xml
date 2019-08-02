@@ -149,7 +149,7 @@
 		Then you have to decide if there should be another obstacle. For a new obstacle press on the upper half of the screen. To finish the steeplechase press on the lower half.</NavigationCreateLevelExitSteeplechaseMenuExplanation>
 		<NavigationCreateLevelErrorExplanation>Unfortunately no explanation available!</NavigationCreateLevelErrorExplanation>
 		<NavigationCreateLevelSwipeRight>Please save the changed node first to continue!</NavigationCreateLevelSwipeRight>
-		<NetworkMenuAwake>Menu to share or download created games, first you have to sign up. Press the upper half to sign up, lower half to register.</NetworkMenuAwake>
+		<NetworkMenuAwake>Menu to share or download created games. Press the upper half to browse games, lower half to save and upload the current game. Swipe left to use a different email adress. </NetworkMenuAwake>
 		<NetworkMenuEmail>The password was sent to your email address.</NetworkMenuEmail>
 		<NetworkMenuRegisterButton>Upper half to enter a name for your account, lower half to confirm it.</NetworkMenuRegisterButton>
 		<NetworkMenuConfirmNameButton>Upper half to enter a password for your account, lower half to confirm it.</NetworkMenuConfirmNameButton>
@@ -198,7 +198,28 @@
 		If you swipe up you will get back to the menu where you can search for an account name.</NetworkMenuDownloadMenu>
 		<NetworkMenuLevelMenu>Here you can choose a level from the downloaded game which you want to play. You can swipe left or right to choose one of them. 
 		You can only play level 2 after you have finished level 1! After you have chosen a level press on the screen! If you swipe up you switch back to the main menu.</NetworkMenuLevelMenu>
-		<PlayLevelMenuFinishedLevelNetwork>Congratulation, you finished the game! To go back to the previous menu, swipe upwards.</PlayLevelMenuFinishedLevelNetwork>
+		<NetworkMenuWaitForDownloadNames>Please wait while the game list is being downloaded.</NetworkMenuWaitForDownloadNames>
+    <NetworkMenuNoSavedGames>There are no locally saved games.</NetworkMenuNoSavedGames>
+    <NetworkMenuSavedGameInstructions>Swipe left or right to browse the available games. Press the upper half of the screen to load a game, lower half to delete it.</NetworkMenuSavedGameInstructions>
+    <NetworkMenuNoOnlineGames>No online games available.</NetworkMenuNoOnlineGames>
+    <NetworkMenuNavigateOnlineGames>Swipe left or right to navigate through the available games, click on the screen to download.</NetworkMenuNavigateOnlineGames>
+    <NetworkMenuDefaultSet>The mail credentials have been reset to the default values.</NetworkMenuDefaultSet>
+    <NetworkMenuRegisterMail>Please enter the email adress you would like to lose and confirm by pressing the lower half of the screen.</NetworkMenuRegisterMail>
+    <NetworkMenuRegisterPW>Enter the according password and confirm by pressing the lower half of the screen again.</NetworkMenuRegisterPW>
+    <NetworkMenuCredentialsRegistered>Your credentials were successfully registered and can be used to share and download games now.</NetworkMenuCredentialsRegistered>    
+    <NetworkMenuNoCredentialsRegistered>Aborted. Credentials were not changed.</NetworkMenuNoCredentialsRegistered>
+    <NetworkMenuCredentialMenu>Press the upper half of the scree to enter custom credentials, lower half to reset to default credentials.</NetworkMenuCredentialMenu>
+    <NetworkMenuDownloadedGame>The game has been successfully downloaded.</NetworkMenuDownloadedGame>
+    <NetworkMenuSaveUploadMenu>Press the upper half to save the game locally, lower half to upload the game.</NetworkMenuSaveUploadMenu>
+    <NetworkMenuUploadedGame>The game has been successfully uploaded.</NetworkMenuUploadedGame>
+    <NetworkMenuSaveGameFirst>Please save your game locally before uploading it.</NetworkMenuSaveGameFirst>
+    <NetworkMenuGameLocallySaved>The game has been successfully saved.</NetworkMenuGameLocallySaved>
+    <NetworkMenuRecordGameName>Please record a name for your game. Press on the screen to start the recording, a second time to stop it.</NetworkMenuRecordGameName>
+    <NetworkMenuGameAlreadySaved>The game has already been saved.</NetworkMenuGameAlreadySaved>
+    <NetworkMenuBrowseGameMenu>Upper half to browse locally saved games, lower half to download games.</NetworkMenuBrowseGameMenu>
+    <NetworkMenuGameOpened>The game has been successfully loaded.</NetworkMenuGameOpened>
+    <NetworkMenuGameDeleted>The game has been successfully deleted.</NetworkMenuGameDeleted>
+    <PlayLevelMenuFinishedLevelNetwork>Congratulation, you finished the game! To go back to the previous menu, swipe upwards.</PlayLevelMenuFinishedLevelNetwork>
 		<PlayLevelMenuFinishedLevelNetwork2>Great, you completed the level! To go back to the previous menu, swipe upwards.</PlayLevelMenuFinishedLevelNetwork2>
 	</language>
 	<language>
@@ -356,7 +377,7 @@
 		Danach musst du festlegen ob es ein weiteres Hindernis geben soll. Für ein neues Hindernis drücke auf die obere Hälfte des Bildschirms. Um den Hindernislauf zu beenden auf die untere Hälfte.</NavigationCreateLevelExitSteeplechaseMenuExplanation>
 		<NavigationCreateLevelErrorExplanation>Leider keine Erklärung vorhanden!</NavigationCreateLevelErrorExplanation>
 		<NavigationCreateLevelSwipeRight>Bitte zuerst den geänderten Knoten speichern um fortzufahren!</NavigationCreateLevelSwipeRight>
-		<NetworkMenuAwake>Menü um erstellte Spiele zu teilen oder Spiele herunterzuladen, zuerst musst du dich anmelden. Obere Hälfte um dich anzumelden, untere Hälfte um dich zu registrieren.</NetworkMenuAwake>
+		<NetworkMenuAwake>Menü um erstellte Spiele zu teilen oder Spiele anderer Nutzer herunterzuladen. Obere Hälfte um verfügbare Spiele zu durchstöbern, untere Hälfte um das aktuelle Spiel zu sichern und hochzuladen. Wische nach links, um eine bestimmte E-Mail-Adresse zum Teilen und Herunterladen zu nutzen. </NetworkMenuAwake>
 		<NetworkMenuEmail>Dir wurde das Passwort zu deiner Email Adresse zugesandt.</NetworkMenuEmail>
 		<NetworkMenuRegisterButton>Obere Hälfte um einen Namen für dein Profil einzugeben, untere Hälfte um diesen zu bestätigen.</NetworkMenuRegisterButton>
 		<NetworkMenuConfirmNameButton>Obere Hälfte um ein Passwort für dein Profil einzugeben, untere Hälfte um dieses zu bestätigen.</NetworkMenuConfirmNameButton>
@@ -405,7 +426,28 @@
 		Spiel herunterzuladen, obere Hälfte um ein heruntergeladenes Spiel zu spielen. Wenn du nach oben wischt gelangst du zum Menü zurück indem du nach einem Profil Namen suchst.</NetworkMenuDownloadMenu>
 		<NetworkMenuLevelMenu>Hier kannst du dir ein Level von dem heruntergeladenen Spiel aussuchen das du spielen möchtest. Du kannst nach links oder rechts wischen um dir eines auszusuchen. Level 2 kannst du erst spielen sobald du Level 1 abgeschlossen hast! 
 		Sobald du eines ausgesucht hast drücke auf den Bildschirm! Wenn du nach oben wischt wechselst du zurück ins Hauptmenü.</NetworkMenuLevelMenu>
-		<PlayLevelMenuFinishedLevelNetwork>Gratulation, du hast das heruntergeladene Spiel durchgespielt! Um in das vorige Menü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevelNetwork>
+    <NetworkMenuWaitForDownloadNames>Bitte warten, online verfügbare Spiele werden abgerufen.</NetworkMenuWaitForDownloadNames>
+    <NetworkMenuNoSavedGames>Keine Spiele auf dem Gerät verfügbar.</NetworkMenuNoSavedGames>
+    <NetworkMenuSavedGameInstructions>Wische nach links oder rechts, um die verfügbaren Spiele zu durchsuchen. Drücke die obere Hälfte des Bildschirms, um ein Spiel zu laden oder die untere, um es zu entfernen.</NetworkMenuSavedGameInstructions>
+		<NetworkMenuNoOnlineGames>Keine Spiele online verfügbar.</NetworkMenuNoOnlineGames>
+    <NetworkMenuNavigateOnlineGames>Wische nach links oder rechts, um durch die verfügbaren Spiele zu navigieren und drücke auf den Bildschirm, um eines herunterzuladen.</NetworkMenuNavigateOnlineGames>
+    <NetworkMenuDefaultSet>Die Zugangsdaten wurden auf die Standardwerte zurückgesetzt.</NetworkMenuDefaultSet>
+    <NetworkMenuRegisterMail>Bitte gewünschte E-Mail-Adresse eingeben und die untere Hälfte des Bildschirms berühren, um sie zu bestätigen.</NetworkMenuRegisterMail>
+    <NetworkMenuRegisterPW>Bitte das zugehörige Passwort eingeben und erneut mit der unteren Hälfte des Bildschirms bestätitgen.</NetworkMenuRegisterPW>
+    <NetworkMenuCredentialsRegistered>Die Zugangsdaten wurden erfolgreich gespeichert und werden nun dazu verwendet, Spiele zu teilen oder herunterzuladen.</NetworkMenuCredentialsRegistered>
+    <NetworkMenuNoCredentialsRegistered>Abbruch. Die Zugangsdaten wurden nicht geändert.</NetworkMenuNoCredentialsRegistered>
+    <NetworkMenuCredentialMenu>Drücke die obere Hälfte des Bildschrirms, um eigene Zugangsdaten zu registrieren oder die untere Hälfte, um die Zugangsdaten auf den Standardwert zurückzusetzen.</NetworkMenuCredentialMenu>
+    <NetworkMenuDownloadedGame>Das Spiel wurde erfolgreich heruntergeladen.</NetworkMenuDownloadedGame>
+    <NetworkMenuSaveUploadMenu>Drücke die obere Hälfte des Bildschirms, um das aktuelle Spiel lokal zu speichern, untere Hälfte, um es hochzuladen.</NetworkMenuSaveUploadMenu>
+    <NetworkMenuUploadedGame>Das Spiel wirde erfolgreich hochgeladen.</NetworkMenuUploadedGame>
+    <NetworkMenuSaveGameFirst>Bitte speichere das Spiel lokal, bevor es hochgeladen wird.</NetworkMenuSaveGameFirst>
+    <NetworkMenuGameLocallySaved>Das Spiel wurde erfolgreich gespeichert.</NetworkMenuGameLocallySaved>
+    <NetworkMenuRecordGameName>Bitte nimm einen Namen für das Spiel auf. Drücke auf den Bildschirm, um die Aufnahme zu starten und ein weiteres Mal, um sie zu stoppen.</NetworkMenuRecordGameName>
+    <NetworkMenuGameAlreadySaved>Das Spiel wurde bereits gespeichert.</NetworkMenuGameAlreadySaved>
+    <NetworkMenuBrowseGameMenu>Obere Hälfte, um lokal gespeicherte Spiele zu durchsuchen, untere Hälfte, um neue herunterzuladen.</NetworkMenuBrowseGameMenu>
+    <NetworkMenuGameOpened>Das Spiel wurde erfolgreich geladen.</NetworkMenuGameOpened>
+    <NetworkMenuGameDeleted>Das Spiel wurde erfolgreich gelöscht.</NetworkMenuGameDeleted>    
+    <PlayLevelMenuFinishedLevelNetwork>Gratulation, du hast das heruntergeladene Spiel durchgespielt! Um in das vorige Menü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevelNetwork>
 		<PlayLevelMenuFinishedLevelNetwork2>Super du hast das heruntergeladene Level abgeschlossen! Um in das vorige Menü zurück zu gehen wische nach oben.</PlayLevelMenuFinishedLevelNetwork2>
 	</language>
 </languages>
