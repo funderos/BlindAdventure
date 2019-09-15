@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor
 //This class manages the methods to navigate in the PlayLevelScene
 public class NavigationPlayLevel : MonoBehaviour {
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author: Stadler Viktor, Benjamin Funder
+//Authors: Stadler Viktor, Funder Benjamin
 //Represents an obstacle from a steeplechase
 [System.Serializable]
 public class Obstacle{

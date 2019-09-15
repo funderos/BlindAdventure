@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor
 //Represents the minigame "quiz"
 [System.Serializable]
 public class Quiz{

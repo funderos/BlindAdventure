@@ -9,7 +9,7 @@ using MailKit.Security;
 using System;
 using MimeKit;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods to load and save levels
 public static class LoadSaveGame
 {
@@ -42,6 +42,38 @@ public static class LoadSaveGame
         return loadedLevel;
     }
 
+    public static void deleteGame()
+    {
+        Directory.Delete(Application.persistentDataPath + "/CurrentGame/", true);
+        createUUID();
+        Directory.CreateDirectory(Application.persistentDataPath + "/CurrentGame/");
+
+    }
+
+    private static void deleteProgress()
+    {
+        int levelNumber = 0;
+        BinaryFormatter binary = new BinaryFormatter();
+        while (File.Exists(Application.persistentDataPath + "/SaveTemp/Level_" + levelNumber + ".txt"))
+        {
+            FileStream fStream = File.Open(Application.persistentDataPath + "/SaveTemp/Level_" + levelNumber + ".txt", FileMode.Open);
+            Level temp = new Level();
+            temp = (Level)binary.Deserialize(fStream);
+            fStream.Close();
+
+            foreach (Node node in temp.getList())
+            {
+                node.setNodeSolved(false);
+            }
+
+            fStream = File.Create(Application.persistentDataPath + "/SaveTemp/Level_" + levelNumber + ".txt");
+            binary.Serialize(fStream, temp);
+            fStream.Close();
+
+            levelNumber++;
+        }
+    }
+
     //Method to create uuid for a game
     public static void createUUID()
     {
@@ -55,10 +87,18 @@ public static class LoadSaveGame
         {
             createUUID();
         }
+
+        DirectoryCopy(Application.persistentDataPath + "/CurrentGame/",
+            Application.persistentDataPath + "/SaveTemp/");
+
+        deleteProgress();
+
         string destination = Application.persistentDataPath + "/SavedGames/" + PlayerPrefs.GetString("GameID") + ".zip";
-        string source = Application.persistentDataPath + "/CurrentGame/";
+        string source = Application.persistentDataPath + "/SaveTemp/";
 
         Archiver.Compress(source, destination);
+
+        Directory.Delete(Application.persistentDataPath + "/SaveTemp/", true);
 
         PlayerPrefs.SetInt("GameSaved", 1);
     }
@@ -68,8 +108,7 @@ public static class LoadSaveGame
     {
         if (!PlayerPrefs.HasKey("GameID"))
         {
-            string uuid = "testid"; //Create UUID for game
-            PlayerPrefs.SetString("GameID", uuid);
+            createUUID();  //Create UUID for game
         }
 
         string path = Application.persistentDataPath + "/SavedGames/" + PlayerPrefs.GetString("GameID");
@@ -215,6 +254,34 @@ public static class LoadSaveGame
         String userCipher = Encrypt.EncryptString(mail, pwPhrase);
         PlayerPrefs.SetString("NetworkUser", userCipher);
         PlayerPrefs.SetString("NetworkPW", Encrypt.EncryptString(pw, userCipher + pwPhrase));
+    }
+
+    private static void DirectoryCopy(string sourceDirName, string destDirName)
+    {
+        // Get the subdirectories for the specified directory.
+        DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+        if (!dir.Exists)
+        {
+            throw new DirectoryNotFoundException(
+                "Source directory does not exist or could not be found: "
+                + sourceDirName);
+        }
+
+        DirectoryInfo[] dirs = dir.GetDirectories();
+        // If the destination directory doesn't exist, create it.
+        if (!Directory.Exists(destDirName))
+        {
+            Directory.CreateDirectory(destDirName);
+        }
+
+        // Get the files in the directory and copy them to the new location.
+        FileInfo[] files = dir.GetFiles();
+        foreach (FileInfo file in files)
+        {
+            string temppath = Path.Combine(destDirName, file.Name);
+            file.CopyTo(temppath, false);
+        }
     }
 }
 

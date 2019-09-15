@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods to record an audio input
 public class Voice : MonoBehaviour {
 
@@ -117,7 +117,16 @@ public class Voice : MonoBehaviour {
 			}
 		}
 		samplesList.RemoveRange (i,samplesList.Count - i);
-		audioSource.clip = AudioClip.Create ("Audio",samplesList.Count, channels, hz, false);
+        for (i = 0; i < samplesList.Count; i++)
+        {
+            samplesList[i] = 0f;
+            if (i > 20000)
+            {
+                break;
+            }
+        }
+
+        audioSource.clip = AudioClip.Create ("Audio",samplesList.Count, channels, hz, false);
 		audioSource.clip.SetData (samplesList.ToArray(),0);
 	}
 

@@ -13,7 +13,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //Was created with the assistance of https://www.codeproject.com/Tips/443588/Simple-Csharp-FTP-Class
 //This class manages the methods to share and download a game
 public class NetworkMenu : MonoBehaviour {
@@ -288,7 +288,10 @@ public class NetworkMenu : MonoBehaviour {
                 LoadSaveGame.uploadGame();
                 TTSManager.Speak(xmlReader.translate("NetworkMenuUploadedGame"), false); //uploaded
             }
-            TTSManager.Speak(xmlReader.translate("NetworkMenuSaveGameFirst"), false); //game needs to be saved first
+            else
+            {
+                TTSManager.Speak(xmlReader.translate("NetworkMenuSaveGameFirst"), false); //game needs to be saved first
+            }
         }
     }
 
@@ -333,6 +336,7 @@ public class NetworkMenu : MonoBehaviour {
             menuPosition = navigationNetworkMenu.navigateTo("BrowseGameMenu");
             gameNameIndex = -1;
             TTSManager.Speak(xmlReader.translate("NetworkMenuGameOpened"), false); // opened
+            TTSManager.Speak(xmlReader.translate("NetworkMenuBrowseGameMenu"), true);
         }
     }
 
@@ -346,6 +350,7 @@ public class NetworkMenu : MonoBehaviour {
             menuPosition = navigationNetworkMenu.navigateTo("BrowseGameMenu");
             gameNameIndex = -1;
             TTSManager.Speak(xmlReader.translate("NetworkMenuGameDeleted"), false); // deleted
+            TTSManager.Speak(xmlReader.translate("NetworkMenuBrowseGameMenu"), true);
         }
     }
 

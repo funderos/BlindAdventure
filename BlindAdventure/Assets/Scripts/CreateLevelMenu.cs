@@ -6,7 +6,7 @@ using System.IO;
 using System;
 using UnityEngine.SceneManagement;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods to create a level
 public class CreateLevelMenu : MonoBehaviour
 {
@@ -136,7 +136,7 @@ public class CreateLevelMenu : MonoBehaviour
             xmlReader.setLanguage(0);
             TTSManager.SetLanguage(TTSManager.ENGLISH);
         }
-        TTSManager.Speak("Level" + levelNumber + xmlReader.translate("CreateLevelMenuAwake"), false);
+        TTSManager.Speak(xmlReader.translate("CreateLevelMenuAwake"), false);
     }
 
     void Start()
@@ -276,8 +276,8 @@ public class CreateLevelMenu : MonoBehaviour
                 nodeIndex = nodeList.Count;
                 if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_" + levelNumber + ".txt"))
                 {
-                    TTSManager.Speak(xmlReader.translate("CreateLevelMenuNewNodeButton") + nodeList.Count + xmlReader.translate("CreateLevelMenuNewNodeButton2"), false);
                     menuPositionLevel = navigationLevel.navigateTo("CreateNodeMenu");
+                    TTSManager.Speak(xmlReader.translate("CreateLevelMenuNewNodeButton") + nodeList.Count + xmlReader.translate("CreateLevelMenuNewNodeButton2"), false);
                 }
                 else
                 {
@@ -384,8 +384,8 @@ public class CreateLevelMenu : MonoBehaviour
         if (swiped == false)
         {
             level.setBackgroundMusic(backgroundMusic);
-            TTSManager.Speak(xmlReader.translate("CreateLevelMenuNewNodeButton") + nodeList.Count + xmlReader.translate("CreateLevelMenuNewNodeButton2"), false);
             menuPositionLevel = navigationLevel.navigateTo("CreateNodeMenu");
+            TTSManager.Speak(xmlReader.translate("CreateLevelMenuNewNodeButton") + nodeList.Count + xmlReader.translate("CreateLevelMenuNewNodeButton2"), false);
         }
     }
 
@@ -688,7 +688,11 @@ public class CreateLevelMenu : MonoBehaviour
                 StartCoroutine("directionOpponent");
             }
             else
+            {
                 fight.newOpponent();
+                TTSManager.Speak(xmlReader.translate("NavigationCreateLevelNavigateOpponentMenu2"), false);
+            }
+                
             voice.saveOpponent(levelNumber, nodeIndex, fight.getOpponentNumber(), scream);
             scream = !scream;
         }

@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods in the start menu
 public class StartMenu : MonoBehaviour {
 
@@ -31,29 +31,29 @@ public class StartMenu : MonoBehaviour {
             yield return null;
         }
         TTSManager.SetLanguage(TTSManager.ENGLISH);
-        TTSManager.Speak("Welcome to BlindAdventure!", false);
         if (!PlayerPrefs.HasKey("Language"))
         { //If there is no player preferences key "Language" (first start of the app), standard language is english
             xmlReader.setLanguage(0);
             PlayerPrefs.SetInt("Language", 0);
             language = 0;
         }
+            language = PlayerPrefs.GetInt("Language"); //Gets the current language from the player preferences; german = 1 or english = 0
+        if (language == 0)
+        {
+            xmlReader.setLanguage(0);
+            TTSManager.SetLanguage(TTSManager.ENGLISH);
+        }
         else
         {
-            language = PlayerPrefs.GetInt("Language"); //Gets the current language from the player preferences; german = 1 or english = 0
-            if (language == 0)
-            {
-                xmlReader.setLanguage(0);
-                TTSManager.SetLanguage(TTSManager.ENGLISH);
-            }
-            else
-            {
-                xmlReader.setLanguage(1);
-                TTSManager.SetLanguage(TTSManager.GERMAN);
-                language = 1;
-            }
+            xmlReader.setLanguage(1);
+            TTSManager.SetLanguage(TTSManager.GERMAN);
+            language = 1;
         }
-        TTSManager.Speak(xmlReader.translate("StartMenuExplanation"), true);
+        while (TTSManager.IsSpeaking())
+        {
+            yield return null;
+        }
+        TTSManager.Speak(xmlReader.translate("StartMenuExplanation"), false);
         if (!PlayerPrefs.HasKey("NetworkUser") || !PlayerPrefs.HasKey("NetworkPW"))
         { //If no Email settings are set, the default value will be used
             LoadSaveGame.setStandardUser();

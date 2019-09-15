@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods in the main menu
 public class MainMenu : MonoBehaviour {
 
@@ -80,9 +80,19 @@ public class MainMenu : MonoBehaviour {
 									TTSManager.Speak ("New Language, English!", false);
 								}
 							}
-							else {
-								SceneManager.LoadScene ("MainScene"); //Loads scene "Mainscene"
-							}
+							else if (menuPosition == Vector3.left * 1600) {
+                                menuPosition = Vector3.zero;
+                                TTSManager.Speak(xmlReader.translate("MainMenuAwake"), false);
+                            }
+                            else if (menuPosition == Vector3.right * 1600)
+                            {
+                                menuPosition = navigationMainMenu.navigateTo("CreateEditLevelMenu");
+                                TTSManager.Speak(xmlReader.translate("MainMenuCreateEditGameButton"), false);
+                            }
+                            else
+                            {
+                                SceneManager.LoadScene("MainScene"); //Loads scene "Mainscene"
+                            }
 						}
 					}
 					if (Mathf.Abs (differenceX) > Mathf.Abs (differenceY)) {
@@ -108,15 +118,70 @@ public class MainMenu : MonoBehaviour {
 	}
 		
 	//Navigates to the CreateLevelMenu
-	public void onCreateGameButtonClick() {
+	public void onCreateEditGameButtonClick() {
 		if (swiped == false) {
-			menuPosition = navigationMainMenu.navigateTo ("CreateLevelMenu");
-			TTSManager.Speak (xmlReader.translate ("MainMenuCreateButton"), false);
+			menuPosition = navigationMainMenu.navigateTo ("CreateEditLevelMenu");
+			TTSManager.Speak (xmlReader.translate ("MainMenuCreateEditGameButton"), false);
 		}
 	}
 
-	//Navigates to the StartGameMenu
-	public void onPlayGameButtonClick() {
+    public void onCreateGameButtonClick()
+    {
+        if (swiped == false)
+        {
+            if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_1.txt")
+                && PlayerPrefs.HasKey("GameSaved") && PlayerPrefs.GetInt("GameSaved") < 1)
+            {
+                menuPosition = navigationMainMenu.navigateTo("DeleteSureMenu");
+                TTSManager.Speak(xmlReader.translate("MainMenuReallyDelete"), false);
+            }
+            else
+            {
+                LoadSaveGame.deleteGame();
+                menuPosition = navigationMainMenu.navigateTo("CreateLevelMenu");
+                TTSManager.Speak(xmlReader.translate("MainMenuCreateButton"), false);
+            }
+        }
+    }
+
+    public void onYesButtonClick()
+    {
+        if (swiped == false)
+        {
+            LoadSaveGame.deleteGame();
+            menuPosition = navigationMainMenu.navigateTo("CreateLevelMenu");
+            TTSManager.Speak(xmlReader.translate("MainMenuCreateButton"), false);
+        }
+    }
+
+    public void onNoButtonClick()
+    {
+        if (swiped == false)
+        {
+            menuPosition = navigationMainMenu.navigateTo("CreateEditLevelMenu");
+            TTSManager.Speak(xmlReader.translate("MainMenuCreateEditGameButton"), false);
+        }
+    }
+
+    public void onEditGameButtonClick()
+    {
+        if (swiped == false)
+        {
+            if (File.Exists(Application.persistentDataPath + "/CurrentGame/Level_1.txt"))
+            {
+                menuPosition = navigationMainMenu.navigateTo("CreateLevelMenu");
+                TTSManager.Speak(xmlReader.translate("MainMenuCreateButton"), false);
+
+            }
+            else
+            {
+                TTSManager.Speak(xmlReader.translate("MainMenuCreateLevelFirst"), false);
+            }
+        }
+    }
+
+    //Navigates to the StartGameMenu
+    public void onPlayGameButtonClick() {
 		if (swiped == false) {
 			menuPosition = navigationMainMenu.navigateTo ("StartGameMenu");
 			TTSManager.Speak (xmlReader.translate ("MainMenuPlayButton"), false);

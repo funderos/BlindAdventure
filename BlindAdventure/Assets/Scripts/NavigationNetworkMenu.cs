@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the methods to navigate in the NetworkScene
 public class NavigationNetworkMenu : MonoBehaviour
 {
@@ -115,43 +115,39 @@ public class NavigationNetworkMenu : MonoBehaviour
         Handheld.Vibrate();
         if (menuPosition == Vector3.zero)
         {
-            TTSManager.Speak(xmlReader.translate("NetworkMenuLoginRegisterMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuGameMenuExplanation"), false);
         }
         else if (menuPosition == Vector3.left * 800)
         { //SaveGameMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuRegisterNameMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuSaveUploadMenuExplanation"), false);
         }
         else if (menuPosition == Vector3.left * 1600)
         { //GameNameMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuRegisterPasswordMenu"), false);
-        }
-        else if (menuPosition == Vector3.left * 2400)
-        { //RegisterEmailMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuRegisterEmailMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuRecordGameName"), false);
         }
         else if (menuPosition == Vector3.left * -800)
         { //BrowseGameMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuLoginNameMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuBrowseGameMenuExplanation"), false);
         }
         else if (menuPosition == Vector3.left * -1600)
         { //BrowseLocalMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuLoginPasswordMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuSavedGameInstructionsExplanation"), false);
         }
         else if (menuPosition == Vector3.left * -2400)
         { //DownloadGameMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuUploadMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuNavigateOnlineGamesExplanation"), false);
         }
         else if (menuPosition == Vector3.left * -3200)
-        { //SearchMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuSearchMenu"), false);
+        { //RegisterMailMenu
+            TTSManager.Speak(xmlReader.translate("NetworkMenuRegisterMailExplanation"), false);
         }
         else if (menuPosition == Vector3.left * -4000)
-        { //DownloadMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuDownloadMenu"), false);
+        { //CredentialsMenu
+            TTSManager.Speak(xmlReader.translate("NetworkMenuCredentialMenuExplanation"), false);
         }
         else if (menuPosition == Vector3.left * -4800)
         { //LevelMenu
-            TTSManager.Speak(xmlReader.translate("NetworkMenuLevelMenu"), false);
+            TTSManager.Speak(xmlReader.translate("NetworkMenuRegisterPWExplanation"), false);
         }
     }
 }

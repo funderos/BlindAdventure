@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the Scroll Rects, that each page snap to the center of the screen
 public class ScrollMenu : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler {
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor
 //Represents an opponent from a fight
 [System.Serializable]
 public class Opponent{

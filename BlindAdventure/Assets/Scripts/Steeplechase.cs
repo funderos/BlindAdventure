@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //Represents the minigame "steeplechase"
 [System.Serializable]
 public class Steeplechase{

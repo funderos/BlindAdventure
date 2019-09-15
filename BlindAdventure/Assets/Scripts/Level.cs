@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor
 //Represents a level
 [System.Serializable]
 public class Level{

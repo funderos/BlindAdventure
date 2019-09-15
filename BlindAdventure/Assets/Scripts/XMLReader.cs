@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml;
 using System.Text;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor, Funder Benjamin
 //This class manages the translation with the XML-File "Languages"
 public class XMLReader : MonoBehaviour {
 

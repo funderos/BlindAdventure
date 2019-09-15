@@ -5,7 +5,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-//Author: Stadler Viktor
+//Authors: Stadler Viktor
 //This class manages the methods to load and save levels in the Network-Mode
 public static class LoadSaveGameNetwork {
 
